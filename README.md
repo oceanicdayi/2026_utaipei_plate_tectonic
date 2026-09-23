@@ -8,6 +8,29 @@
 
 [`板塊構造學說_三節課完整教材.md`](板塊構造學說_三節課完整教材.md)
 
+## 互動式網頁
+
+`index.html` 是這份教材的水彩風互動版本，整合了 `artifacts/` 中的 15 張證據圖：
+
+- 中／英／雙語一鍵切換（CLIL）
+- 地震分布圖疊上板塊邊界的揭示滑桿、地球分層點選
+- 三個神秘區域與四個 Mystery Region 的證據推論選擇題
+- 三種板塊邊界的動畫模型與因果鏈
+- 證據實驗室：大陸拼合、海底擴張速率計算、隱沒帶地震、夏威夷熱點年齡計算
+- 五個真實案例的 CER 寫作框與參考答案
+- AI 第二輪驗證表單、Exit Tickets、探究護照進度
+- 所有填寫內容存在瀏覽器 localStorage，可匯出為 Markdown 學習歷程
+
+### 部署到 GitHub Pages
+
+`.github/workflows/pages.yml` 會在每次推送到 `main` 時自動部署整個儲存庫根目錄。第一次使用時：
+
+1. 到 repo 的 **Settings → Pages**，Source 選 **GitHub Actions**（工作流程含 `enablement: true`，多數情況下會自動開啟）。
+2. 合併到 `main` 或到 **Actions → Deploy to GitHub Pages** 手動執行一次。
+3. 網址為 `https://<帳號>.github.io/2026_utaipei_plate_tectonic/`。
+
+本機預覽：在儲存庫根目錄執行 `python3 -m http.server 8000`，開啟 `http://localhost:8000/`。
+
 ## 適用對象與時數
 
 - 大學地球物理通論、自然科學相關課程
@@ -105,4 +128,7 @@ Observation → Pattern → Model → Explanation → Prediction → Test → Re
 | 檔案 | 說明 |
 |---|---|
 | `板塊構造學說_三節課完整教材.md` | 三節課教學設計：學習目標、分鐘流程、案例、CER、Exit Ticket、評量與 AI 學習歷程 |
+| `index.html`、`assets/` | 互動式網頁（HTML、水彩風 CSS、互動 JS） |
+| `artifacts/` | 15 張地球物理證據圖：地震分布、板塊邊界、磁異常條紋、擴張速率、隱沒帶、熱點、大陸漂移復原、地球構造 |
+| `.github/workflows/pages.yml` | GitHub Pages 自動部署 |
 | `README.md` | 本說明 |

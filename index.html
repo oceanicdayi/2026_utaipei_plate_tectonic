@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>閱讀地球 Reading the Earth｜板塊構造探究 Plate Tectonics Inquiry</title>
+<meta name="description" content="水彩風、探究式、CLIL 雙語的板塊構造學說互動教材：從地震、火山、斷層與地形證據推論板塊運動。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Nunito:ital,wght@0,400;0,600;0,800;1,400&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css?v=2">
+</head>
+<body class="mode-both">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <filter id="wobble" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="3" seed="7" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="14" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="wobble-soft" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="3" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="6" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="paper-edge">
+      <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="4" seed="11" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="5"/>
+    </filter>
+  </defs>
+</svg>
+
+<header class="topbar">
+  <a class="brand" href="#top">
+    <span class="brand-dot"></span>
+    <span class="bi"><span class="zh">閱讀地球</span><span class="en">Reading the Earth</span></span>
+  </a>
+  <nav class="topnav" aria-label="sections">
+    <a href="#observe"><span class="bi"><span class="zh">觀察</span><span class="en">Observe</span></span></a>
+    <a href="#mysteries"><span class="bi"><span class="zh">神秘區域</span><span class="en">Mysteries</span></span></a>
+    <a href="#model"><span class="bi"><span class="zh">建模</span><span class="en">Model</span></span></a>
+    <a href="#evidence"><span class="bi"><span class="zh">證據實驗室</span><span class="en">Evidence Lab</span></span></a>
+    <a href="#cases"><span class="bi"><span class="zh">真實案例</span><span class="en">Cases</span></span></a>
+    <a href="#predict"><span class="bi"><span class="zh">預測</span><span class="en">Predict</span></span></a>
+    <a href="#ai"><span class="bi"><span class="zh">AI 驗證</span><span class="en">AI Check</span></span></a>
+    <a href="#language"><span class="bi"><span class="zh">語言角</span><span class="en">Language</span></span></a>
+  </nav>
+  <div class="tools">
+    <div class="lang-toggle" role="group" aria-label="language">
+      <button data-mode="zh" title="只顯示中文">中</button>
+      <button data-mode="both" class="active" title="雙語 Bilingual">中 + EN</button>
+      <button data-mode="en" title="English only">EN</button>
+    </div>
+    <div class="passport" title="探究護照 Inquiry passport">
+      <span class="passport-count" id="passport-count">0</span>/<span id="passport-total">8</span>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ===================== HERO ===================== -->
+<section class="hero">
+  <div class="hero-wash wash-ocean"></div>
+  <div class="hero-wash wash-moss"></div>
+  <div class="hero-wash wash-terracotta"></div>
+  <div class="hero-inner">
+    <p class="eyebrow bi"><span class="zh">大學地球物理通論・高中自然科探究</span><span class="en">Inquiry-based · CLIL bilingual · Science education</span></p>
+    <h1>
+      <span class="zh-title">板塊構造學說</span>
+      <span class="en-title">Plate Tectonics as Scientific Modeling</span>
+    </h1>
+    <p class="lead bi">
+      <span class="zh">從地震、火山、斷層與地形的真實證據，反推板塊如何運動。不先背名稱，先問「為什麼」。</span>
+      <span class="en">Infer how plates move from real evidence: earthquakes, volcanoes, faults and landforms. Don't identify first. Explain first.</span>
+    </p>
+    <div class="flow">
+      <span>Observe<small>觀察</small></span><i>→</i>
+      <span>Pattern<small>找規律</small></span><i>→</i>
+      <span>Model<small>建立模型</small></span><i>→</i>
+      <span>Explain<small>解釋</small></span><i>→</i>
+      <span>Predict<small>預測</small></span><i>→</i>
+      <span>Test<small>驗證</small></span><i>→</i>
+      <span>Revise<small>修正</small></span>
+    </div>
+    <div class="hero-actions">
+      <a class="btn primary" href="#observe"><span class="bi"><span class="zh">開始觀察</span><span class="en">Start observing</span></span></a>
+      <a class="btn ghost" href="#lessons"><span class="bi"><span class="zh">三節課地圖</span><span class="en">Lesson map</span></span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== LESSON MAP ===================== -->
+<section id="lessons" class="section">
+  <h2 class="sec-title"><span class="blob blob-ochre"></span><span class="bi"><span class="zh">三節課地圖</span><span class="en">Three-lesson map</span></span></h2>
+  <p class="bi sub">
+    <span class="zh">3 節 × 50 分鐘。每一節回答一個核心問題，並把一個科學建模步驟做深。</span>
+    <span class="en">3 × 50 minutes. Each lesson answers one driving question and practises one stage of scientific modeling.</span>
+  </p>
+  <div class="lesson-grid">
+    <article class="card lesson">
+      <span class="lesson-num">1</span>
+      <h3 class="bi"><span class="zh">為什麼地震、火山集中在特定地方？</span><span class="en">Why are earthquakes and volcanoes concentrated in certain places?</span></h3>
+      <p class="bi"><span class="zh">全球觀察 → 三個神秘區域 → 三種板塊模型 → 身體動作模型</span><span class="en">Global patterns → three mystery regions → three boundary models → body models</span></p>
+      <div class="tags"><span>Observation</span><span>Pattern</span><span>Model</span></div>
+      <a class="jump" href="#observe">→ #observe</a>
+    </article>
+    <article class="card lesson">
+      <span class="lesson-num">2</span>
+      <h3 class="bi"><span class="zh">為什麼不同板塊邊界形成不同地質構造？</span><span class="en">Why do different boundaries make different structures?</span></h3>
+      <p class="bi"><span class="zh">日本・喜馬拉雅・東非裂谷・大西洋中洋脊／冰島・聖安地列斯 → CER</span><span class="en">Japan · Himalaya · East African Rift · Mid-Atlantic/Iceland · San Andreas → CER</span></p>
+      <div class="tags"><span>Evidence</span><span>Explanation</span><span>Reasoning</span></div>
+      <a class="jump" href="#cases">→ #cases</a>
+    </article>
+    <article class="card lesson">
+      <span class="lesson-num">3</span>
+      <h3 class="bi"><span class="zh">如果模型正確，我們還能預測什麼？</span><span class="en">If our model is correct, what else can we predict?</span></h3>
+      <p class="bi"><span class="zh">Mystery Region 小組挑戰 → AI 第二輪驗證 → 模型修正 → 回到臺灣</span><span class="en">Mystery region challenge → AI second-round check → model revision → back to Taiwan</span></p>
+      <div class="tags"><span>Prediction</span><span>Test</span><span>Revision</span></div>
+      <a class="jump" href="#predict">→ #predict</a>
+    </article>
+  </div>
+</section>
+
+<!-- ===================== 1. OBSERVE ===================== -->
+<section id="observe" class="section" data-passport="observe">
+  <h2 class="sec-title"><span class="blob blob-ocean"></span><span class="bi"><span class="zh">一、先觀察，再解釋</span><span class="en">1. Observe first, explain later</span></span></h2>
+  <p class="teacher-line">“Today, do not explain first. Observe first.”<span class="zh">今天先不要急著解釋，我們先觀察。</span></p>
+
+  <div class="two-col">
+    <div class="card reveal-card">
+      <div class="reveal-stage">
+        <img class="reveal-base" src="artifacts/01-seismicity.png" alt="全球 1961–1967 年三萬個地震震央分布圖 Global epicentre map 1961–1967">
+        <img class="reveal-top" id="reveal-top" src="artifacts/02-plate-boundary.png" alt="主要與次要岩石圈板塊及相對速度 Lithospheric plates and relative velocities" style="opacity:0">
+      </div>
+      <label class="slider-row">
+        <span class="bi"><span class="zh">揭示板塊邊界</span><span class="en">Reveal plate boundaries</span></span>
+        <input type="range" id="reveal-range" min="0" max="100" value="0">
+        <output id="reveal-out">0%</output>
+      </label>
+      <p class="caption bi">
+        <span class="zh">左圖：1961–1967 年 30,000 個地震震央（after Barazangi &amp; Dorman, 1969）。拉動滑桿疊上板塊邊界與相對速度（mm/yr，NUVEL-1；DeMets et al., 1990）。</span>
+        <span class="en">Base: epicentres of 30,000 earthquakes, 1961–1967 (after Barazangi &amp; Dorman, 1969). Drag to overlay plate boundaries and relative velocities in mm/yr (NUVEL-1; DeMets et al., 1990).</span>
+      </p>
+    </div>
+
+    <div class="card notes-card">
+      <h3 class="bi"><span class="zh">你觀察到什麼？</span><span class="en">What do you observe?</span></h3>
+      <p class="hint bi"><span class="zh">先不要說出任何名詞。只寫下你「看到」的東西。</span><span class="en">No technical names yet. Write only what you can see.</span></p>
+      <ul class="check-list" id="observe-checks">
+        <li><label><input type="checkbox"> <span class="bi"><span class="zh">地震不是平均分布</span><span class="en">Earthquakes are not evenly spread</span></span></label></li>
+        <li><label><input type="checkbox"> <span class="bi"><span class="zh">它們形成帶狀</span><span class="en">They form narrow belts</span></span></label></li>
+        <li><label><input type="checkbox"> <span class="bi"><span class="zh">有些帶在海洋中間</span><span class="en">Some belts run through the middle of oceans</span></span></label></li>
+        <li><label><input type="checkbox"> <span class="bi"><span class="zh">環太平洋特別密集</span><span class="en">The Pacific rim is especially dense</span></span></label></li>
+      </ul>
+      <textarea id="observe-notes" rows="4" placeholder="We observe that … / 我們觀察到……"></textarea>
+      <div class="board">
+        <strong>Observation ≠ Explanation</strong>
+        <span class="zh">觀察不等於解釋。</span>
+      </div>
+      <div class="cer-mini">
+        <div><b>Claim</b><span class="bi"><span class="zh">地震不是隨機分布於全球。</span><span class="en">Earthquakes are not randomly distributed around the world.</span></span></div>
+        <div><b>Evidence</b><span class="bi"><span class="zh">全球地震分布圖。</span><span class="en">The global epicentre map.</span></span></div>
+        <div><b>Reasoning</b><span class="bi"><span class="zh">為什麼？這就是接下來三節課要處理的事。</span><span class="en">Why? That is the work of the next three lessons.</span></span></div>
+      </div>
+      <button class="btn small stamp-btn" data-stamp="observe"><span class="bi"><span class="zh">蓋章：我完成觀察</span><span class="en">Stamp: observation done</span></span></button>
+    </div>
+  </div>
+
+  <div class="card wide earth-card">
+    <div class="two-col tight">
+      <figure class="polaroid tilt-l">
+        <img src="artifacts/15-earth-structure.png" alt="地球內部分層構造 Layered structure of the Earth">
+        <figcaption class="bi"><span class="zh">地球內部的簡化分層與主要震波不連續面深度。</span><span class="en">Simplified layered structure of the Earth showing major seismic discontinuities.</span></figcaption>
+      </figure>
+      <div>
+        <h3 class="bi"><span class="zh">什麼東西在動？</span><span class="en">What exactly is moving?</span></h3>
+        <p class="bi"><span class="zh">板塊 = 剛性的<b>岩石圈</b>（地殼＋最上部地函），漂在部分熔融、可流動的<b>軟流圈</b>上。點選各層看看。</span><span class="en">A plate is rigid <b>lithosphere</b> (crust + uppermost mantle) riding on the partially molten, flowing <b>asthenosphere</b>. Tap each layer.</span></p>
+        <div class="layers" id="layers">
+          <button class="layer" data-key="crust"><span>Crust<small>地殼</small></span><em>6–8 km (ocean) · 38–40 km (continent)</em></button>
+          <button class="layer" data-key="litho"><span>Lithosphere<small>岩石圈</small></span><em>rigid · 70–150 km</em></button>
+          <button class="layer" data-key="asth"><span>Asthenosphere<small>軟流圈</small></span><em>partially molten · to ~220–400 km</em></button>
+          <button class="layer" data-key="meso"><span>Mesosphere<small>中間圈（下部地函）</small></span><em>semi-solid, plastic · to 2891 km</em></button>
+          <button class="layer" data-key="core"><span>Core<small>地核</small></span><em>fluid outer · solid inner · to 6371 km</em></button>
+        </div>
+        <p class="layer-info bi" id="layer-info"><span class="zh">選一層，看它在板塊運動中扮演什麼角色。</span><span class="en">Choose a layer to see its role in plate motion.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 2. MYSTERIES ===================== -->
+<section id="mysteries" class="section" data-passport="mysteries">
+  <h2 class="sec-title"><span class="blob blob-terracotta"></span><span class="bi"><span class="zh">二、三個神秘區域</span><span class="en">2. Three mystery regions</span></span></h2>
+  <p class="teacher-line">“What is happening underground?”<span class="zh">地底下發生了什麼事？</span></p>
+  <p class="bi sub"><span class="zh">每個區域只給你證據。先用手勢比出板塊怎麼動，再選一個答案。</span><span class="en">You only get evidence. Show the motion with your hands first, then choose.</span></p>
+  <div class="mystery-grid" id="mystery-grid"></div>
+</section>
+
+<!-- ===================== 3. MODEL BUILDER ===================== -->
+<section id="model" class="section" data-passport="model">
+  <h2 class="sec-title"><span class="blob blob-moss"></span><span class="bi"><span class="zh">三、建立三種板塊模型</span><span class="en">3. Build the three boundary models</span></span></h2>
+  <p class="bi sub"><span class="zh">板塊運動 → 應力 → 岩石變形與斷層 → 地震／岩漿 → 地表構造。這條因果鏈是三節課最核心的板書。</span><span class="en">Plate motion → stress → deformation &amp; faulting → earthquakes / magma → surface structures. This causal chain is the key board diagram of the whole unit.</span></p>
+
+  <div class="card wide model-card">
+    <div class="model-tabs" role="tablist">
+      <button class="model-tab active" data-model="divergent"><b>← →</b> Divergent<small>張裂型</small></button>
+      <button class="model-tab" data-model="convergent"><b>→ ←</b> Convergent<small>聚合型</small></button>
+      <button class="model-tab" data-model="transform"><b>↑ ↓</b> Transform<small>錯動型</small></button>
+    </div>
+    <div class="model-body">
+      <div class="plate-anim" id="plate-anim" data-model="divergent">
+        <svg viewBox="0 0 600 260" aria-hidden="true">
+          <defs>
+            <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e9f3f7"/><stop offset="1" stop-color="#cfe3ec"/></linearGradient>
+            <linearGradient id="mantle" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e8a17e"/><stop offset="1" stop-color="#c96b52"/></linearGradient>
+          </defs>
+          <rect width="600" height="260" fill="url(#sky)"/>
+          <rect y="150" width="600" height="110" fill="url(#mantle)" opacity=".9"/>
+          <g id="magma" class="magma"><path d="M300 250 C 290 200, 310 190, 300 150" stroke="#f4d35e" stroke-width="10" fill="none" stroke-linecap="round"/></g>
+          <g id="plate-left" class="plate"><rect x="0" y="120" width="300" height="40" rx="4" fill="#9db98a" stroke="#4d6b47" stroke-width="3"/><rect x="0" y="112" width="300" height="12" fill="#b9d3a5"/></g>
+          <g id="plate-right" class="plate"><rect x="300" y="120" width="300" height="40" rx="4" fill="#9db98a" stroke="#4d6b47" stroke-width="3"/><rect x="300" y="112" width="300" height="12" fill="#b9d3a5"/></g>
+          <g id="volcano" class="volcano"><path d="M280 112 L300 70 L320 112 Z" fill="#8a5a44"/><circle cx="300" cy="62" r="6" fill="#f4d35e"/></g>
+          <g id="quakes" class="quakes"><circle cx="290" cy="135" r="4"/><circle cx="315" cy="128" r="3"/><circle cx="330" cy="170" r="3"/><circle cx="350" cy="200" r="3"/></g>
+          <g id="arrow-l" class="arrow"><path d="M150 95 L110 95 M120 85 L110 95 L120 105" stroke="#2f3a3f" stroke-width="4" fill="none" stroke-linecap="round"/></g>
+          <g id="arrow-r" class="arrow"><path d="M450 95 L490 95 M480 85 L490 95 L480 105" stroke="#2f3a3f" stroke-width="4" fill="none" stroke-linecap="round"/></g>
+        </svg>
+      </div>
+      <div class="chain" id="chain"></div>
+    </div>
+    <div class="model-foot two-col tight">
+      <figure class="polaroid tilt-r">
+        <img src="artifacts/06-plate_tectonic_model.png" alt="從擴張中心到隱沒帶的岩石圈剖面 Cross-section from spreading centre to subduction zone">
+        <figcaption class="bi"><span class="zh">從擴張中心（張裂）到隱沒帶（聚合）的假想垂直剖面：兩種邊界在同一張圖上。</span><span class="en">Hypothetical section from a spreading centre (divergent) to a subduction zone (convergent): two boundaries on one diagram.</span></figcaption>
+      </figure>
+      <div class="body-model">
+        <h3 class="bi"><span class="zh">身體動作模型</span><span class="en">Body model</span></h3>
+        <p class="bi"><span class="zh">用雙手表示板塊，一邊做一邊說英文。老師追問：What kind of stress?</span><span class="en">Use both hands as plates and say the sentence aloud. Teacher follows up: What kind of stress?</span></p>
+        <ul class="hands">
+          <li><b>← →</b> Plates move apart. <em>tension</em></li>
+          <li><b>→ ←</b> Plates move together. <em>compression</em></li>
+          <li><b>↑ ↓</b> Plates slide past each other. <em>shear</em></li>
+        </ul>
+        <button class="btn small stamp-btn" data-stamp="model"><span class="bi"><span class="zh">蓋章：我能說出三條因果鏈</span><span class="en">Stamp: I can explain all three chains</span></span></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 4. EVIDENCE LAB ===================== -->
+<section id="evidence" class="section" data-passport="evidence">
+  <h2 class="sec-title"><span class="blob blob-plum"></span><span class="bi"><span class="zh">四、證據實驗室：科學家怎麼知道板塊在動？</span><span class="en">4. Evidence Lab: how do we know plates move?</span></span></h2>
+  <p class="bi sub"><span class="zh">板塊構造學說不是一張圖，而是幾十年來多重證據疊出來的模型。四個抽屜，每個抽屜一條證據線。</span><span class="en">Plate tectonics is not one picture; it is a model built from decades of multiple, independent lines of evidence. Four drawers, four lines of evidence.</span></p>
+
+  <div class="drawer-tabs" role="tablist">
+    <button class="drawer-tab active" data-drawer="fit"><span class="bi"><span class="zh">大陸拼圖</span><span class="en">Continental fit</span></span></button>
+    <button class="drawer-tab" data-drawer="spread"><span class="bi"><span class="zh">海底擴張</span><span class="en">Sea-floor spreading</span></span></button>
+    <button class="drawer-tab" data-drawer="subduct"><span class="bi"><span class="zh">隱沒帶地震</span><span class="en">Subduction earthquakes</span></span></button>
+    <button class="drawer-tab" data-drawer="hotspot"><span class="bi"><span class="zh">熱點軌跡</span><span class="en">Hotspot tracks</span></span></button>
+  </div>
+
+  <!-- drawer: continental fit -->
+  <div class="drawer active" id="drawer-fit">
+    <div class="card wide">
+      <div class="gallery">
+        <figure class="polaroid tilt-l">
+          <img src="artifacts/11-plate_tectonic_theory_1.png" alt="Wegener 的盤古大陸復原 Wegener's reconstruction of Pangaea">
+          <figcaption class="bi"><span class="zh">Wegener（1922）的盤古大陸：石炭紀晚期的煤（K）、鹽（S）、沙漠（W）、冰層（E）分布圍繞當時的赤道與極區。</span><span class="en">Wegener's Pangaea (1922): Late Carboniferous coal (K), salt (S), desert (W) and ice (E) deposits arranged around the palaeo-equator and poles.</span></figcaption>
+        </figure>
+        <figure class="polaroid tilt-r">
+          <img src="artifacts/12-plate_tectonic_theory_2.png" alt="大西洋兩岸大陸在 500 噚等深線的電腦拼合 Computer fit of Atlantic continents at 500 fathoms">
+          <figcaption class="bi"><span class="zh">Bullard 等（1965）以 500 噚（900 m）等深線做電腦拼合：重疊與缺口都很小。</span><span class="en">Bullard et al. (1965): computer fit of the Atlantic-bordering continents at 500 fathoms; overlaps and gaps are small.</span></figcaption>
+        </figure>
+        <figure class="polaroid tilt-l">
+          <img src="artifacts/13-plate_tectonic_theory_3.png" alt="岡瓦納大陸拼合 Fit of Gondwanaland">
+          <figcaption class="bi"><span class="zh">Smith &amp; Hallam（1970）：岡瓦納大陸——南美、非洲、印度、南極、澳洲拼回一塊。</span><span class="en">Smith &amp; Hallam (1970): Gondwanaland reassembled from South America, Africa, India, Antarctica and Australia.</span></figcaption>
+        </figure>
+        <figure class="polaroid tilt-r">
+          <img src="artifacts/14-plate_tectonic_theory_4.png" alt="古地磁復原 Palaeomagnetic reconstruction, Ordovician and Silurian">
+          <figcaption class="bi"><span class="zh">Van der Voo（1993）古地磁復原：450 Ma 與 420 Ma 的 Laurentia、Baltica 與 Gondwanaland 相對位置。</span><span class="en">Palaeomagnetic reconstruction (Van der Voo, 1993): Laurentia, Baltica and Gondwanaland at 450 Ma and 420 Ma.</span></figcaption>
+        </figure>
+      </div>
+      <div class="think">
+        <h4 class="bi"><span class="zh">思考</span><span class="en">Think</span></h4>
+        <p class="bi"><span class="zh">海岸線能拼合，只是「看起來像」。是什麼讓它從巧合變成證據？（提示：氣候沈積物、化石、岩層、古地磁都指向同一件事。）</span><span class="en">A coastline fit is only "looks alike". What turns coincidence into evidence? (Hint: climate deposits, fossils, rock belts and palaeomagnetism all point the same way.)</span></p>
+        <p class="frame">We observe that ______, which is evidence that ______.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- drawer: sea-floor spreading -->
+  <div class="drawer" id="drawer-spread">
+    <div class="card wide">
+      <div class="gallery three">
+        <figure class="polaroid tilt-l">
+          <img src="artifacts/03-magnetic_anomaly_age.png" alt="Reykjanes 洋脊對稱磁異常條紋 Symmetric magnetic anomalies, Reykjanes Ridge">
+          <figcaption class="bi"><span class="zh">冰島西南 Reykjanes 洋脊：磁異常條紋以洋脊軸為中心左右對稱，愈遠愈老（Heirtzler et al., 1966）。</span><span class="en">Reykjanes Ridge, SW of Iceland: magnetic stripes symmetric about the ridge axis; older with distance (Heirtzler et al., 1966).</span></figcaption>
+        </figure>
+        <figure class="polaroid tilt-r">
+          <img src="artifacts/04-magnetic_anomaly_pn.png" alt="Vine–Matthews–Morley 假說 Observed and modelled anomalies, Pacific–Antarctic ridge">
+          <figcaption class="bi"><span class="zh">太平洋—南極洋脊的觀測與模型磁異常曲線；Vine–Matthews–Morley：新生地殼記錄當時地磁極性。</span><span class="en">Observed vs modelled anomalies across the Pacific–Antarctic ridge; Vine–Matthews–Morley: new crust records the field polarity of its time.</span></figcaption>
+        </figure>
+        <figure class="polaroid tilt-l">
+          <img src="artifacts/05-age_mid_ridge.png" alt="不同洋脊的半擴張速率 Half-spreading rates at different ridges">
+          <figcaption class="bi"><span class="zh">距洋脊距離 vs. 年齡：斜率就是半擴張速率（Vine, 1966）。</span><span class="en">Distance from ridge vs age: the slope is the half-spreading rate (Vine, 1966).</span></figcaption>
+        </figure>
+      </div>
+
+      <div class="lab">
+        <h4 class="bi"><span class="zh">迷你實驗：算出海底擴張速率</span><span class="en">Mini-lab: compute a spreading rate</span></h4>
+        <p class="bi"><span class="zh">距離 = 半擴張速率 × 年齡。選一條洋脊，拉動年齡，預測異常條紋離洋脊多遠，再回到上圖檢查。</span><span class="en">distance = half-rate × age. Pick a ridge, drag the age, predict how far the anomaly lies from the axis, then check on the graph above.</span></p>
+        <div class="lab-row">
+          <select id="ridge-select">
+            <option value="44">East Pacific Rise — 44 mm/yr</option>
+            <option value="29">Juan de Fuca Ridge — 29 mm/yr</option>
+            <option value="10">Reykjanes Ridge — 10 mm/yr</option>
+          </select>
+          <label>Age <input type="range" id="age-range" min="0" max="4" step="0.1" value="2"> <output id="age-out">2.0 Ma</output></label>
+        </div>
+        <div class="lab-result">
+          <div class="ridge-viz"><div class="ridge-axis"></div><div class="ridge-dot" id="ridge-dot"></div><div class="ridge-dot mirror" id="ridge-dot-2"></div></div>
+          <p class="big" id="spread-result">≈ 88 km <small>from the ridge axis (each side) · 距洋脊軸兩側各</small></p>
+          <p class="bi"><span class="zh">注意：兩側各 88 km，海盆一共變寬 176 km。全擴張速率 = 2 × 半擴張速率。</span><span class="en">Note: 88 km on each side means the basin widened by 176 km. Full rate = 2 × half-rate.</span></p>
+        </div>
+        <p class="frame">Because new crust forms at the ridge and moves away, the age of the sea floor ______ with distance from the axis.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- drawer: subduction -->
+  <div class="drawer" id="drawer-subduct">
+    <div class="card wide two-col">
+      <figure class="polaroid tilt-r">
+        <img src="artifacts/07-subduction_stress.png" alt="隱沒板塊內的應力 Stresses in a subducting slab">
+        <figcaption class="bi"><span class="zh">隱沒岩石圈內的應力（Isacks &amp; Molnar, 1969）：實心圓＝拉張、空心圓＝壓縮；圓越大地震越活躍。上部被拉入低強度軟流圈而拉張，下部頂到高強度層則壓縮，有時深部斷裂脫落。</span><span class="en">Stresses in a subducting slab (Isacks &amp; Molnar, 1969): solid = extension, open = compression; circle size = seismicity. The upper slab is pulled into weak asthenosphere (extension); the lower slab meets stronger mantle (compression); sometimes the deep slab breaks off.</span></figcaption>
+      </figure>
+      <div>
+        <h4 class="bi"><span class="zh">地震為什麼會「往下斜著排」？</span><span class="en">Why do earthquakes line up on a dipping plane?</span></h4>
+        <p class="bi"><span class="zh">在日本、馬里亞納這類地區，地震從海溝附近的淺源，往陸側逐漸變深到 600–700 km。這條斜面叫 <b>Wadati–Benioff zone</b>——正是隱沒板塊的位置。</span><span class="en">In Japan or the Marianas, earthquakes deepen landward from the trench to 600–700 km. This inclined plane is the <b>Wadati–Benioff zone</b>: the subducting slab itself.</span></p>
+        <div class="chain static">
+          <span>oceanic plate<small>海洋板塊</small></span><i>↓</i>
+          <span>subduction<small>隱沒</small></span><i>↓</i>
+          <span>trench<small>海溝</small></span><i>↓</i>
+          <span>Wadati–Benioff zone<small>斜向地震帶</small></span><i>↓</i>
+          <span>mantle melting<small>地函熔融</small></span><i>↓</i>
+          <span>volcanic arc<small>火山弧</small></span>
+        </div>
+        <details class="fold">
+          <summary class="bi"><span class="zh">延伸：為什麼隱沒板塊上半部是拉張、下半部是壓縮？</span><span class="en">Extension: why is the upper slab in extension and the lower slab in compression?</span></summary>
+          <p class="bi"><span class="zh">板塊像被重力往下拉的繩子：上段被拉（extension），下段撞到較硬的地函像柱子被壓（compression）。這也是為什麼「深源地震」本身就是隱沒的證據——沒有冷、硬的板塊，600 km 深處不可能有脆性破裂。</span><span class="en">Think of the slab as a rope pulled down by gravity: the upper part stretches, the lower part hits stronger mantle and is squeezed. This is why deep earthquakes are themselves evidence of subduction: without a cold rigid slab, brittle failure at 600 km would be impossible.</span></p>
+        </details>
+        <p class="frame">We observe earthquakes from shallow to deep, which provides evidence of ______.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- drawer: hotspots -->
+  <div class="drawer" id="drawer-hotspot">
+    <div class="card wide">
+      <div class="gallery three">
+        <figure class="polaroid tilt-l">
+          <img src="artifacts/08-hotspot.png" alt="全球 41 個熱點分布 Global distribution of 41 hotspots">
+          <figcaption class="bi"><span class="zh">全球 41 個熱點與殘餘大地水準面（Crough &amp; Judy, 1980）。熱點多半不在板塊邊界上——它們是「不屬於三種邊界」的火山。</span><span class="en">41 hotspots and the residual geoid (Crough &amp; Judy, 1980). Most hotspots are not on plate boundaries: volcanoes that fit none of the three models.</span></figcaption>
+        </figure>
+        <figure class="polaroid tilt-r">
+          <img src="artifacts/09-hotspot_chain.png" alt="夏威夷—皇帝海山鏈與熱點示意 Hawaiian–Emperor chain and hotspot sketch">
+          <figcaption class="bi"><span class="zh">夏威夷海嶺與皇帝海山鏈記錄太平洋板塊經過固定熱點的軌跡；約 43 Ma 前方向轉折（Van Andel, 1992；Wilson, 1963）。</span><span class="en">The Hawaiian Ridge and Emperor Seamounts trace the Pacific plate over a fixed hotspot; note the bend at ~43 Ma (Van Andel, 1992; Wilson, 1963).</span></figcaption>
+        </figure>
+        <figure class="polaroid tilt-l">
+          <img src="artifacts/10-age_hotspot_hawaii.png" alt="夏威夷群島年齡與距 Kilauea 距離 Age vs distance from Kilauea">
+          <figcaption class="bi"><span class="zh">K–Ar 年齡 vs. 距 Kilauea 距離：斜率約 10 cm/yr（Dalrymple et al., 1977）。</span><span class="en">K–Ar age vs distance from Kilauea: slope ≈ 10 cm/yr (Dalrymple et al., 1977).</span></figcaption>
+        </figure>
+      </div>
+      <div class="lab">
+        <h4 class="bi"><span class="zh">迷你實驗：用火山島當里程表</span><span class="en">Mini-lab: volcanic islands as an odometer</span></h4>
+        <p class="bi"><span class="zh">如果熱點固定不動、板塊以 10 cm/yr 移動，離 Kilauea 一定距離的島應該有多老？拉動距離，再對照圖上的實測年齡。</span><span class="en">If the hotspot is fixed and the plate moves at 10 cm/yr, how old should an island at a given distance from Kilauea be? Drag the distance, then compare with the measured ages.</span></p>
+        <div class="lab-row">
+          <label>Distance from Kilauea <input type="range" id="hawaii-range" min="0" max="4000" step="50" value="1000"> <output id="hawaii-out">1000 km</output></label>
+        </div>
+        <p class="big" id="hawaii-result">≈ 10 Ma</p>
+        <p class="bi"><span class="zh">Midway 距 Kilauea 約 2,400 km，實測約 27 Ma；你的預測接近嗎？哪裡開始偏離直線？為什麼皇帝海山鏈會轉彎？</span><span class="en">Midway is ~2,400 km away and dated ~27 Ma. Is your prediction close? Where do the points leave the line? Why does the Emperor chain bend?</span></p>
+        <p class="frame">If the hotspot is fixed and our model is correct, we should also observe ______.</p>
+      </div>
+    </div>
+  </div>
+  <div class="center"><button class="btn small stamp-btn" data-stamp="evidence"><span class="bi"><span class="zh">蓋章：我看完四條證據線</span><span class="en">Stamp: four lines of evidence explored</span></span></button></div>
+</section>
+
+<!-- ===================== 5. REAL CASES ===================== -->
+<section id="cases" class="section" data-passport="cases">
+  <h2 class="sec-title"><span class="blob blob-ocean"></span><span class="bi"><span class="zh">五、真實案例與 CER</span><span class="en">5. Real cases &amp; CER</span></span></h2>
+  <p class="teacher-line">“Why is there a trench? Why are volcanoes behind the trench? Why do earthquakes become deeper?”<span class="zh">為什麼有海溝？為什麼火山在海溝後方？為什麼地震愈來愈深？</span></p>
+  <p class="bi sub"><span class="zh">選一個案例，先看證據，畫地下剖面，再用 Claim–Evidence–Reasoning 寫出你的解釋。寫完才展開參考答案。</span><span class="en">Choose a case, study the evidence, sketch the section underground, then write your Claim–Evidence–Reasoning. Open the model answer only after you have written yours.</span></p>
+  <div class="case-tabs" id="case-tabs"></div>
+  <div class="card wide case-panel" id="case-panel"></div>
+</section>
+
+<!-- ===================== 6. PREDICT ===================== -->
+<section id="predict" class="section" data-passport="predict">
+  <h2 class="sec-title"><span class="blob blob-ochre"></span><span class="bi"><span class="zh">六、Mystery Region 小組挑戰</span><span class="en">6. Mystery Region team challenge</span></span></h2>
+  <p class="teacher-line">“Don't identify first. Explain first.”<span class="zh">不要先認名稱，先解釋形成原因。</span></p>
+  <p class="bi sub"><span class="zh">每組一個區域。回答五個問題，最後一題是預測：如果模型正確，還應該看到什麼？</span><span class="en">One region per team. Answer five questions; the last one is a prediction: if the model is right, what else should we see?</span></p>
+  <div class="region-grid" id="region-grid"></div>
+  <div class="card wide report">
+    <h3 class="bi"><span class="zh">小組報告框架</span><span class="en">Team report frame</span></h3>
+    <ol class="frames">
+      <li><b>Observation</b> We observe that ______.</li>
+      <li><b>Claim</b> We think this region is ______.</li>
+      <li><b>Evidence</b> Our evidence is ______.</li>
+      <li><b>Reasoning</b> This can be explained by ______.</li>
+      <li><b>Prediction</b> If our model is correct, we should also observe ______.</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ===================== 7. AI CHECK ===================== -->
+<section id="ai" class="section" data-passport="ai">
+  <h2 class="sec-title"><span class="blob blob-plum"></span><span class="bi"><span class="zh">七、AI 第二輪驗證與模型修正</span><span class="en">7. AI second-round check &amp; model revision</span></span></h2>
+  <p class="teacher-line">“Do not ask AI for the answer before you build your own model.”<span class="zh">在你建立自己的模型以前，不要先問 AI。</span></p>
+  <div class="two-col">
+    <form class="card ai-form" id="ai-form">
+      <label><span class="bi"><span class="zh">1. 我的原始模型</span><span class="en">1. My original model</span></span><textarea name="original" rows="3" placeholder="We think this region is a … because …"></textarea></label>
+      <label><span class="bi"><span class="zh">2. 我給 AI 的 prompt（只描述觀察，不問答案）</span><span class="en">2. My prompt to the AI (describe observations only)</span></span><textarea name="prompt" rows="3" placeholder="We observe a deep trench, a volcanic arc, and earthquakes from shallow to 600 km depth. What tectonic process can explain these observations?"></textarea></label>
+      <label><span class="bi"><span class="zh">3. AI 的回答（摘要）</span><span class="en">3. The AI's answer (summary)</span></span><textarea name="response" rows="3"></textarea></label>
+      <fieldset class="agree">
+        <legend class="bi"><span class="zh">4. 我同意／不同意</span><span class="en">4. I agree / disagree</span></legend>
+        <label><input type="radio" name="agree" value="agree"> I agree</label>
+        <label><input type="radio" name="agree" value="partly"> I partly agree</label>
+        <label><input type="radio" name="agree" value="disagree"> I disagree</label>
+      </fieldset>
+      <label><span class="bi"><span class="zh">5. 我的證據（為什麼同意／不同意）</span><span class="en">5. My evidence (why)</span></span><textarea name="evidence" rows="3" placeholder="My evidence is …"></textarea></label>
+      <label><span class="bi"><span class="zh">6. 修正後的模型</span><span class="en">6. Revised model</span></span><textarea name="revised" rows="3" placeholder="Based on the new evidence, we revise our model: …"></textarea></label>
+      <label><span class="bi"><span class="zh">7. 最終反思</span><span class="en">7. Final reflection</span></span><textarea name="reflection" rows="2" placeholder="A scientific model is useful because …"></textarea></label>
+      <div class="form-actions">
+        <button type="button" class="btn primary" id="export-md"><span class="bi"><span class="zh">匯出學習歷程 (.md)</span><span class="en">Export portfolio (.md)</span></span></button>
+        <button type="button" class="btn ghost" id="print-page"><span class="bi"><span class="zh">列印</span><span class="en">Print</span></span></button>
+        <button type="button" class="btn ghost danger" id="clear-all"><span class="bi"><span class="zh">清除我的紀錄</span><span class="en">Clear my data</span></span></button>
+      </div>
+      <p class="hint bi"><span class="zh">所有輸入只存在你這台裝置的瀏覽器（localStorage），不會上傳。</span><span class="en">Everything is saved only in this browser (localStorage); nothing is uploaded.</span></p>
+    </form>
+
+    <div class="card">
+      <h3 class="bi"><span class="zh">模型修正討論：火山＝聚合型？</span><span class="en">Revision talk: volcano = convergent?</span></h3>
+      <p class="bi"><span class="zh">有人說「有火山就是聚合型」。反例：冰島在中洋脊上，也有大量火山；夏威夷根本不在板塊邊界。</span><span class="en">Someone says "volcanoes mean convergent". Counter-examples: Iceland sits on a mid-ocean ridge with many volcanoes; Hawaii is not on any boundary.</span></p>
+      <div class="board">
+        <strong>Is our original model still sufficient?</strong>
+        <span class="zh">原本的模型還夠用嗎？不夠。火山本身不能單獨決定板塊環境。</span>
+      </div>
+      <p class="bi"><span class="zh">結論：需要<b>多重證據</b>（multiple lines of evidence）——斷層型態、地震深度、地形、GPS 方向一起看。</span><span class="en">Conclusion: use <b>multiple lines of evidence</b>: fault type, earthquake depth, landforms and GPS motion together.</span></p>
+      <h4 class="bi"><span class="zh">判斷 AI 回答的三個問題</span><span class="en">Three questions for judging an AI answer</span></h4>
+      <ul class="bi-list">
+        <li class="bi"><span class="zh">它用了我給的全部證據，還是只挑了一個？</span><span class="en">Did it use all my evidence, or pick just one?</span></li>
+        <li class="bi"><span class="zh">它的因果鏈完整嗎（運動→應力→斷層→地震／岩漿→地形）？</span><span class="en">Is its causal chain complete (motion → stress → fault → quakes/magma → landform)?</span></li>
+        <li class="bi"><span class="zh">它有沒有提出可以再檢驗的預測？</span><span class="en">Does it offer a prediction I could test?</span></li>
+      </ul>
+      <button class="btn small stamp-btn" data-stamp="ai"><span class="bi"><span class="zh">蓋章：我完成 AI 驗證</span><span class="en">Stamp: AI check done</span></span></button>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 8. TAIWAN ===================== -->
+<section id="taiwan" class="section" data-passport="taiwan">
+  <h2 class="sec-title"><span class="blob blob-moss"></span><span class="bi"><span class="zh">八、回到臺灣</span><span class="en">8. Back to Taiwan</span></span></h2>
+  <p class="teacher-line">“Is Taiwan simply a convergent boundary?”<span class="zh">臺灣只是一個聚合型板塊邊界嗎？</span></p>
+  <div class="card wide taiwan">
+    <div class="taiwan-map" aria-hidden="true">
+      <svg viewBox="0 0 320 420">
+        <defs><linearGradient id="sea" x1="0" x2="1"><stop offset="0" stop-color="#cfe3ec"/><stop offset="1" stop-color="#9ec4d6"/></linearGradient></defs>
+        <rect width="320" height="420" fill="url(#sea)" rx="18"/>
+        <path d="M150 40 C 200 60, 235 120, 238 200 C 240 280, 200 360, 160 395 C 130 370, 100 300, 92 220 C 86 150, 110 70, 150 40 Z" fill="#b9d3a5" stroke="#4d6b47" stroke-width="3" filter="url(#wobble-soft)"/>
+        <path d="M168 70 C 200 130, 205 250, 170 380" stroke="#8a5a44" stroke-width="9" fill="none" stroke-linecap="round" opacity=".8"/>
+        <path d="M205 130 C 215 210, 205 300, 185 370" stroke="#e6c37a" stroke-width="5" fill="none" stroke-linecap="round" stroke-dasharray="8 6"/>
+        <path d="M120 100 C 110 190, 118 280, 140 370" stroke="#d98b6b" stroke-width="4" fill="none" stroke-linecap="round" stroke-dasharray="3 6"/>
+        <path d="M245 60 C 275 45, 300 40, 315 38" stroke="#2f3a3f" stroke-width="4" fill="none" stroke-dasharray="6 5"/>
+        <path d="M150 400 C 160 420, 175 440, 190 460" stroke="#2f3a3f" stroke-width="4" fill="none" stroke-dasharray="6 5"/>
+        <g class="tw-quakes"><circle cx="212" cy="150" r="4"/><circle cx="218" cy="200" r="3"/><circle cx="200" cy="260" r="4"/><circle cx="190" cy="320" r="3"/><circle cx="135" cy="230" r="3"/><circle cx="140" cy="300" r="4"/><circle cx="260" cy="70" r="3"/></g>
+        <text x="14" y="30" class="tw-label">Ryukyu Trench →</text>
+        <text x="20" y="410" class="tw-label">← Manila Trench</text>
+      </svg>
+    </div>
+    <div>
+      <p class="bi"><span class="zh">最簡化的答案是「聚合型」。但真實的臺灣同時包含：</span><span class="en">The simplest answer is "convergent". But real Taiwan contains all of these at once:</span></p>
+      <ul class="tw-list">
+        <li><b class="c-brown">Central Range</b><span class="bi"><span class="zh">中央山脈：碰撞造山、地殼縮短</span><span class="en">collision, crustal shortening, mountain building</span></span></li>
+        <li><b class="c-terra">Western Foothills</b><span class="bi"><span class="zh">西部麓山帶：逆衝斷層、活斷層</span><span class="en">thrust faults, active faults</span></span></li>
+        <li><b class="c-ochre">Longitudinal Valley</b><span class="bi"><span class="zh">花東縱谷：菲律賓海板塊與歐亞板塊的縫合線</span><span class="en">suture between the Philippine Sea and Eurasian plates</span></span></li>
+        <li><b>Ryukyu Trench</b><span class="bi"><span class="zh">琉球海溝：菲律賓海板塊向北隱沒到歐亞板塊之下</span><span class="en">Philippine Sea plate subducts northward beneath Eurasia</span></span></li>
+        <li><b>Manila Trench</b><span class="bi"><span class="zh">馬尼拉海溝：歐亞板塊（南海）向東隱沒到菲律賓海板塊之下</span><span class="en">Eurasian (South China Sea) plate subducts eastward beneath the Philippine Sea plate</span></span></li>
+      </ul>
+      <div class="board">
+        <strong>Real Earth is more complicated than our diagrams.</strong>
+        <span class="zh">真實地球比課本中的模型更複雜。兩個方向相反的隱沒帶、一條碰撞帶、無數活斷層，全擠在一個島上。</span>
+      </div>
+      <p class="frame">Taiwan is not simply ______; it includes ______, ______ and ______.</p>
+      <button class="btn small stamp-btn" data-stamp="taiwan"><span class="bi"><span class="zh">蓋章：我能用多重證據描述臺灣</span><span class="en">Stamp: I can describe Taiwan with multiple lines of evidence</span></span></button>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 9. LANGUAGE CORNER ===================== -->
+<section id="language" class="section" data-passport="language">
+  <h2 class="sec-title"><span class="blob blob-terracotta"></span><span class="bi"><span class="zh">九、CLIL 語言角</span><span class="en">9. CLIL language corner</span></span></h2>
+  <p class="bi sub"><span class="zh">不必背很多英文，只要反覆使用幾個句型。點喇叭聽發音，點句子複製。</span><span class="en">You don't need a lot of English; you need a few frames used again and again. Tap the speaker to listen, tap a sentence to copy it.</span></p>
+
+  <div class="two-col">
+    <div class="card">
+      <h3 class="bi"><span class="zh">核心句型</span><span class="en">Core sentence frames</span></h3>
+      <ul class="frames-list" id="frames-list"></ul>
+    </div>
+    <div class="card words">
+      <h3 class="bi"><span class="zh">三個最重要的字</span><span class="en">Three words that matter most</span></h3>
+      <div class="word-cards">
+        <button class="word" data-say="trench"><b>trench</b><span>海溝</span></button>
+        <button class="word" data-say="subduction"><b>subduction</b><span>隱沒</span></button>
+        <button class="word" data-say="evidence"><b>evidence</b><span>證據</span></button>
+      </div>
+      <p class="frame speakable" data-say="A trench can provide evidence of subduction.">A trench can provide evidence of subduction.<span class="zh">海溝可以提供隱沒作用的證據。</span></p>
+      <p class="frame speakable" data-say="We observe a trench, which provides evidence of subduction.">We observe a trench, which provides evidence of subduction.<span class="zh">我們觀察到海溝，它提供了隱沒作用的證據。</span></p>
+      <h4 class="bi"><span class="zh">三種應力</span><span class="en">Three kinds of stress</span></h4>
+      <div class="stress-row">
+        <button class="stress" data-say="tension"><b>tension</b><span>張力 ← →</span></button>
+        <button class="stress" data-say="compression"><b>compression</b><span>壓力 → ←</span></button>
+        <button class="stress" data-say="shear"><b>shear</b><span>剪力 ↑ ↓</span></button>
+      </div>
+      <button class="btn small stamp-btn" data-stamp="language"><span class="bi"><span class="zh">蓋章：我能用英文說出一組 CER</span><span class="en">Stamp: I can say a CER in English</span></span></button>
+    </div>
+  </div>
+
+  <div class="card wide">
+    <h3 class="bi"><span class="zh">關鍵概念統整表</span><span class="en">Key concept summary</span></h3>
+    <div class="table-wrap">
+      <table class="concept">
+        <thead><tr>
+          <th>Plate boundary<small>板塊邊界</small></th><th>Motion<small>運動</small></th><th>Stress<small>應力</small></th><th>Fault<small>斷層</small></th><th>Earthquakes<small>地震</small></th><th>Volcanoes<small>火山</small></th><th>Landforms<small>地形</small></th>
+        </tr></thead>
+        <tbody>
+          <tr class="row-div"><td>Divergent<small>張裂型</small></td><td>apart ← →</td><td>tension<small>張力</small></td><td>normal<small>正斷層</small></td><td>shallow<small>淺源</small></td><td>common<small>常見</small></td><td>ridge, rift, basin<small>洋脊、裂谷、盆地</small></td></tr>
+          <tr class="row-con"><td>Convergent<small>聚合型</small></td><td>together → ←</td><td>compression<small>壓力</small></td><td>reverse / thrust<small>逆斷層／逆衝斷層</small></td><td>shallow–deep<small>淺至深</small></td><td>often<small>常有（碰撞帶少）</small></td><td>trench, arc, mountains<small>海溝、島弧、山脈</small></td></tr>
+          <tr class="row-tra"><td>Transform<small>錯動型</small></td><td>slide past ↑ ↓</td><td>shear<small>剪力</small></td><td>strike-slip<small>走向滑移斷層</small></td><td>shallow<small>淺源</small></td><td>usually few<small>通常很少</small></td><td>fault valleys, offsets<small>斷層谷、水平錯移</small></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 10. EXIT TICKETS ===================== -->
+<section id="exit" class="section">
+  <h2 class="sec-title"><span class="blob blob-ocean"></span><span class="bi"><span class="zh">十、Exit Tickets</span><span class="en">10. Exit tickets</span></span></h2>
+  <p class="bi sub"><span class="zh">每節課最後五分鐘。先寫自己的答案，再點開參考答案。</span><span class="en">The last five minutes of each lesson. Write your own answer first, then open the reference.</span></p>
+  <div class="ticket-grid" id="ticket-grid"></div>
+</section>
+
+<!-- ===================== 11. ASSESSMENT ===================== -->
+<section id="assess" class="section">
+  <h2 class="sec-title"><span class="blob blob-ochre"></span><span class="bi"><span class="zh">十一、評量與學習歷程</span><span class="en">11. Assessment &amp; portfolio</span></span></h2>
+  <div class="two-col">
+    <div class="card">
+      <h3 class="bi"><span class="zh">評量設計</span><span class="en">Rubric</span></h3>
+      <div class="rubric">
+        <div class="rubric-row"><b>Observation</b><div class="bar"><i style="--w:20%"></i></div><span>20%</span><p class="bi"><span class="zh">能否從圖表找出有效證據</span><span class="en">Can you extract valid evidence from data?</span></p></div>
+        <div class="rubric-row"><b>Scientific model</b><div class="bar"><i style="--w:30%"></i></div><span>30%</span><p class="bi"><span class="zh">能否建立合理因果模型</span><span class="en">Can you build a reasonable causal model?</span></p></div>
+        <div class="rubric-row"><b>CER</b><div class="bar"><i style="--w:25%"></i></div><span>25%</span><p class="bi"><span class="zh">Claim、Evidence、Reasoning 是否一致</span><span class="en">Are claim, evidence and reasoning consistent?</span></p></div>
+        <div class="rubric-row"><b>Model revision</b><div class="bar"><i style="--w:25%"></i></div><span>25%</span><p class="bi"><span class="zh">能否根據新證據／AI 回答修正模型</span><span class="en">Can you revise the model from new evidence or an AI answer?</span></p></div>
+      </div>
+      <div class="board">
+        <strong>The answer is not the only thing we grade.</strong>
+        <span class="zh">答案正不正確不是唯一評量標準。更重要的是：學生如何從證據走到結論。</span>
+      </div>
+    </div>
+    <div class="card">
+      <h3 class="bi"><span class="zh">學生最後繳交的學習歷程</span><span class="en">What students hand in</span></h3>
+      <ol class="portfolio" id="portfolio">
+        <li class="bi"><span class="zh">最初判斷</span><span class="en">Initial judgement</span></li>
+        <li class="bi"><span class="zh">初始模型圖</span><span class="en">Initial model sketch</span></li>
+        <li class="bi"><span class="zh">CER（主張、證據、推理）</span><span class="en">CER (Claim–Evidence–Reasoning)</span></li>
+        <li class="bi"><span class="zh">給 AI 的 prompt</span><span class="en">Prompt to AI</span></li>
+        <li class="bi"><span class="zh">AI 回答</span><span class="en">AI response</span></li>
+        <li class="bi"><span class="zh">自己對 AI 的評價</span><span class="en">Evaluation of the AI</span></li>
+        <li class="bi"><span class="zh">使用的證據</span><span class="en">Evidence used</span></li>
+        <li class="bi"><span class="zh">修改後模型</span><span class="en">Revised model</span></li>
+        <li class="bi"><span class="zh">最終反思</span><span class="en">Final reflection</span></li>
+      </ol>
+      <p class="bi"><span class="zh">如此就能看到學生的 <b>thinking process</b>，而不只是 final answer。上方的「匯出學習歷程」會把本頁所有填寫內容整理成一份 Markdown。</span><span class="en">This makes the student's <b>thinking process</b> visible, not just the final answer. "Export portfolio" above collects everything typed on this page into one Markdown file.</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CLOSING ===================== -->
+<section class="closing">
+  <div class="hero-wash wash-ocean"></div>
+  <div class="hero-wash wash-terracotta"></div>
+  <blockquote>
+    <p>Today, the most important thing is not that you remember three types of plate boundaries.</p>
+    <p class="zh">今天最重要的，不是你記得三種板塊邊界。</p>
+    <p>The important thing is that when you see a trench, a volcano, an earthquake pattern, or a mountain range, you begin to ask: <b>Why?</b></p>
+    <p class="zh">真正重要的是，當你看到海溝、火山、地震分布或山脈時，你開始問：「為什麼？」</p>
+    <p class="final">Don't just memorize the Earth.<br>Learn how to read the Earth.</p>
+    <p class="zh final-zh">不要只背地球的知識，要學會閱讀地球留下的證據。</p>
+  </blockquote>
+</section>
+
+</main>
+
+<footer class="footer">
+  <p class="bi"><span class="zh">教材：《板塊構造學說：從地質證據推論板塊運動》三節課完整教材（本儲存庫）。網頁為純靜態 HTML/CSS/JS，可直接以 GitHub Pages 發佈。</span><span class="en">Based on the three-lesson unit "Plate Tectonics: Inferring Plate Motion from Geological Evidence" in this repository. Static HTML/CSS/JS; deployable with GitHub Pages.</span></p>
+  <p class="bi credits"><span class="zh">圖片來源：本儲存庫 <code>artifacts/</code> 資料夾之地球物理教科書圖（Fig. 1.5–1.27），各圖原始出處依圖說標示：Wegener 1922；Köppen &amp; Wegener 1924；Bullard et al. 1965；Smith &amp; Hallam 1970；Van der Voo 1993；Barazangi &amp; Dorman 1969；DeMets et al. 1990；Heirtzler et al. 1966；Pitman &amp; Heirtzler 1966；Vine 1966；Isacks &amp; Molnar 1969；Crough &amp; Judy 1980；Van Andel 1992；Wilson 1963；Dalrymple et al. 1977。僅供教學使用。</span><span class="en">Figures: geophysics textbook figures (Fig. 1.5–1.27) in the repository's <code>artifacts/</code> folder; original sources as given in each caption. For educational use.</span></p>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="assets/app.js?v=2"></script>
+</body>
+</html>
