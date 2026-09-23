@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Nunito:ital,wght@0,400;0,600;0,800;1,400&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=2">
+<link rel="stylesheet" href="assets/style.css?v=3">
 </head>
 <body class="mode-both">
 
@@ -51,8 +51,11 @@
       <button data-mode="en" title="English only">EN</button>
     </div>
     <div class="passport" title="探究護照 Inquiry passport">
-      <span class="passport-count" id="passport-count">0</span>/<span id="passport-total">8</span>
+      <span class="passport-count" id="passport-count">0</span>/<span id="passport-total">9</span>
     </div>
+    <button type="button" class="btn small export-top" data-export title="匯出學習歷程 (.md) · Export portfolio">
+      <span aria-hidden="true">⤓</span> <span class="bi"><span class="zh">匯出</span><span class="en">Export</span></span>
+    </button>
   </div>
 </header>
 
@@ -431,7 +434,7 @@
       <label><span class="bi"><span class="zh">6. 修正後的模型</span><span class="en">6. Revised model</span></span><textarea name="revised" rows="3" placeholder="Based on the new evidence, we revise our model: …"></textarea></label>
       <label><span class="bi"><span class="zh">7. 最終反思</span><span class="en">7. Final reflection</span></span><textarea name="reflection" rows="2" placeholder="A scientific model is useful because …"></textarea></label>
       <div class="form-actions">
-        <button type="button" class="btn primary" id="export-md"><span class="bi"><span class="zh">匯出學習歷程 (.md)</span><span class="en">Export portfolio (.md)</span></span></button>
+        <button type="button" class="btn primary" id="export-md" data-export><span class="bi"><span class="zh">匯出學習歷程 (.md)</span><span class="en">Export portfolio (.md)</span></span></button>
         <button type="button" class="btn ghost" id="print-page"><span class="bi"><span class="zh">列印</span><span class="en">Print</span></span></button>
         <button type="button" class="btn ghost danger" id="clear-all"><span class="bi"><span class="zh">清除我的紀錄</span><span class="en">Clear my data</span></span></button>
       </div>
@@ -579,7 +582,8 @@
         <li class="bi"><span class="zh">修改後模型</span><span class="en">Revised model</span></li>
         <li class="bi"><span class="zh">最終反思</span><span class="en">Final reflection</span></li>
       </ol>
-      <p class="bi"><span class="zh">如此就能看到學生的 <b>thinking process</b>，而不只是 final answer。上方的「匯出學習歷程」會把本頁所有填寫內容整理成一份 Markdown。</span><span class="en">This makes the student's <b>thinking process</b> visible, not just the final answer. "Export portfolio" above collects everything typed on this page into one Markdown file.</span></p>
+      <p class="bi"><span class="zh">如此就能看到學生的 <b>thinking process</b>，而不只是 final answer。「匯出學習歷程」會把本頁所有填寫內容（觀察、CER、預測、AI 驗證、Exit Tickets、護照）整理成一份 Markdown 檔。</span><span class="en">This makes the student's <b>thinking process</b> visible, not just the final answer. "Export portfolio" collects everything typed on this page (observation, CER, predictions, AI check, exit tickets, passport) into one Markdown file.</span></p>
+      <button type="button" class="btn primary" data-export><span class="bi"><span class="zh">匯出學習歷程 (.md)</span><span class="en">Export portfolio (.md)</span></span></button>
     </div>
   </div>
 </section>
@@ -606,6 +610,6 @@
 </footer>
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
-<script src="assets/app.js?v=2"></script>
+<script src="assets/app.js?v=3"></script>
 </body>
 </html>
