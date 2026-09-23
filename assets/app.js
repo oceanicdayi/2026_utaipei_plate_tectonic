@@ -321,7 +321,7 @@
     if (!confirm("清除這台裝置上的所有紀錄？ Clear all saved work on this device?")) return;
     store.clear(); location.reload();
   });
-  $("#export-md").addEventListener("click", () => {
+  function exportPortfolio() {
     const f = new FormData($("#ai-form"));
     const v = k => (f.get(k) || "").toString().trim() || "—";
     const date = new Date().toISOString().slice(0, 10);
@@ -340,7 +340,8 @@
     const blob = new Blob([lines.join("\n")], { type: "text/markdown;charset=utf-8" });
     const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = `plate-tectonics-portfolio-${date}.md`; a.click();
     setTimeout(() => URL.revokeObjectURL(a.href), 2000); toast("Exported 已匯出");
-  });
+  }
+  $$("[data-export]").forEach(b => b.addEventListener("click", exportPortfolio));
 
   /* ---------------- nav highlight ---------------- */
   const navLinks = $$(".topnav a");

@@ -71,6 +71,8 @@ small{font-weight:400}
 .lang-toggle button.active{background:var(--ink);color:var(--paper)}
 .passport{font-family:var(--font-hand);font-size:1.2rem;padding:.1rem .6rem;border:2px dashed var(--terra);border-radius:12px;color:var(--brown);transform:rotate(-3deg)}
 .passport-count{font-weight:700}
+.export-top{margin-top:0;padding:.3rem .7rem;font-size:.85rem;white-space:nowrap;background:var(--ochre-wash)}
+.export-top span[aria-hidden]{font-size:1rem;line-height:1}
 
 /* ---------- washes / blobs ---------- */
 /* watercolor pools: pale centre, pigment gathers at a soft, uneven rim */
