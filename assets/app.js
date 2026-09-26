@@ -25,7 +25,7 @@
 
   /* ---------------- passport (progress) ---------------- */
   const stamps = new Set(store.get("stamps", []));
-  const AUTO_STAMPS = ["mysteries", "cases", "predict"]; // earned by completing activities, no button
+  const AUTO_STAMPS = ["mysteries", "cases", "predict", "newscheck"]; // earned by completing activities, no button
   const total = $$(".stamp-btn").length + AUTO_STAMPS.length;
   $("#passport-total").textContent = total;
   function renderStamps() {
@@ -315,8 +315,8 @@
     });
   }
   function checkClaims() {
-    if (claims.every(c => store.get("claim:" + c.id, false)) && !stamps.has("krakatau")) {
-      stamps.add("krakatau"); store.set("stamps", [...stamps]); renderStamps(); toast("News checked ✓ 查證完成");
+    if (claims.every(c => store.get("claim:" + c.id, false)) && !stamps.has("newscheck")) {
+      stamps.add("newscheck"); store.set("stamps", [...stamps]); renderStamps(); toast("News checked ✓ 查證完成");
     }
   }
   checkClaims();
