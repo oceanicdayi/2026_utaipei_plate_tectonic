@@ -117,7 +117,7 @@ Observation → Pattern → Model → Explanation → Prediction → Test → Re
 3. 第二節依五個真實案例推進，並在喜馬拉雅案例明確要求修正模型。
 4. 第三節分組進行 Mystery Region，完成預測後才使用 AI。
 5. 結尾回到臺灣（中央山脈、西部麓山帶、縱谷、馬尼拉海溝、琉球海溝），讓學生看到真實板塊環境比單一圖示更複雜。
-6. 延伸（選用）：以 2026 年 9 月喀拉喀托之子噴發新聞為時事案例，補充「隱沒帶邊上也能有局部張裂」的例子，投影片見 [`artifacts/喀拉喀托之子與板塊構造.pdf`](artifacts/喀拉喀托之子與板塊構造.pdf)；資料驅動的地圖與地震剖面版本見 [pygmt-map-lab 的案例：巽他海峽／喀拉喀托之子（2026）](https://github.com/oceanicdayi/pygmt-map-lab/blob/main/case-studies/2026-sunda-strait-krakatau/README.md)。
+6. 延伸（選用）：以 2026 年 9 月喀拉喀托之子噴發新聞為時事案例，補充「隱沒帶邊上也能有局部張裂」的例子，投影片見 [`artifacts/喀拉喀托之子與板塊構造.pdf`](artifacts/喀拉喀托之子與板塊構造.pdf)；資料驅動的地圖與地震剖面版本見 [pygmt-map-lab 的案例：巽他海峽／喀拉喀托之子（2026）](https://github.com/oceanicdayi/pygmt-map-lab/tree/main/case-studies/2026-sunda-strait-krakatau)。
 
 課程收束的一句話：
 
@@ -134,3 +134,5 @@ Observation → Pattern → Model → Explanation → Prediction → Test → Re
 | `artifacts/喀拉喀托之子與板塊構造.pdf` | 時事延伸投影片：2026 年 9 月喀拉喀托之子噴發新聞、巽他海峽的隱沒轉張裂構造、與台灣對照 |
 | `.github/workflows/pages.yml` | GitHub Pages 自動部署 |
 | `README.md` | 本說明 |
+
+延伸案例（真實新聞事件對照）：[2026 巽他海峽・喀拉喀托之子](https://github.com/oceanicdayi/pygmt-map-lab/tree/main/case-studies/2026-sunda-strait-krakatau)，用 PyGMT 畫圖對照隱沒帶模型，收錄於姊妹專案 [pygmt-map-lab](https://github.com/oceanicdayi/pygmt-map-lab)。
