@@ -303,12 +303,8 @@ textarea:focus,select:focus{outline:2px solid var(--ocean);border-color:transpar
 .bi-list li{margin:.3rem 0}
 
 /* ---------- taiwan ---------- */
-.taiwan{display:grid;grid-template-columns:300px 1fr;gap:1.4rem;align-items:center}
+.taiwan{display:grid;grid-template-columns:1.15fr 1fr;gap:1.4rem;align-items:start}
 @media (max-width:860px){.taiwan{grid-template-columns:1fr}}
-.taiwan-map svg{width:100%;border-radius:18px;box-shadow:var(--shadow)}
-.tw-quakes circle{fill:#b04a3a;animation:blink 1.8s infinite}
-.tw-quakes circle:nth-child(odd){animation-delay:.6s}
-.tw-label{font-family:var(--font-hand);font-size:15px;fill:var(--ink)}
 .tw-list{list-style:none;padding:0;margin:.4rem 0}
 .tw-list li{display:grid;grid-template-columns:11em 1fr;gap:.6rem;padding:.35rem 0;border-bottom:1px dashed rgba(47,58,63,.15);font-size:.95rem}
 .tw-list b{font-family:var(--font-en)}
