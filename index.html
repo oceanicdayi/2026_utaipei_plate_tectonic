@@ -466,21 +466,10 @@
   <h2 class="sec-title"><span class="blob blob-moss"></span><span class="bi"><span class="zh">八、回到臺灣</span><span class="en">8. Back to Taiwan</span></span></h2>
   <p class="teacher-line">“Is Taiwan simply a convergent boundary?”<span class="zh">臺灣只是一個聚合型板塊邊界嗎？</span></p>
   <div class="card wide taiwan">
-    <div class="taiwan-map" aria-hidden="true">
-      <svg viewBox="0 0 320 420">
-        <defs><linearGradient id="sea" x1="0" x2="1"><stop offset="0" stop-color="#cfe3ec"/><stop offset="1" stop-color="#9ec4d6"/></linearGradient></defs>
-        <rect width="320" height="420" fill="url(#sea)" rx="18"/>
-        <path d="M150 40 C 200 60, 235 120, 238 200 C 240 280, 200 360, 160 395 C 130 370, 100 300, 92 220 C 86 150, 110 70, 150 40 Z" fill="#b9d3a5" stroke="#4d6b47" stroke-width="3" filter="url(#wobble-soft)"/>
-        <path d="M168 70 C 200 130, 205 250, 170 380" stroke="#8a5a44" stroke-width="9" fill="none" stroke-linecap="round" opacity=".8"/>
-        <path d="M205 130 C 215 210, 205 300, 185 370" stroke="#e6c37a" stroke-width="5" fill="none" stroke-linecap="round" stroke-dasharray="8 6"/>
-        <path d="M120 100 C 110 190, 118 280, 140 370" stroke="#d98b6b" stroke-width="4" fill="none" stroke-linecap="round" stroke-dasharray="3 6"/>
-        <path d="M245 60 C 275 45, 300 40, 315 38" stroke="#2f3a3f" stroke-width="4" fill="none" stroke-dasharray="6 5"/>
-        <path d="M150 400 C 160 420, 175 440, 190 460" stroke="#2f3a3f" stroke-width="4" fill="none" stroke-dasharray="6 5"/>
-        <g class="tw-quakes"><circle cx="212" cy="150" r="4"/><circle cx="218" cy="200" r="3"/><circle cx="200" cy="260" r="4"/><circle cx="190" cy="320" r="3"/><circle cx="135" cy="230" r="3"/><circle cx="140" cy="300" r="4"/><circle cx="260" cy="70" r="3"/></g>
-        <text x="14" y="30" class="tw-label">Ryukyu Trench →</text>
-        <text x="20" y="410" class="tw-label">← Manila Trench</text>
-      </svg>
-    </div>
+    <figure class="polaroid taiwan-map">
+      <img src="artifacts/18-taiwan_map.png" alt="臺灣地圖：地形、USGS 地震（依深度上色，可見兩道方向相反的隱沒地震帶）、全新世火山、中央山脈／西部麓山帶／花東縱谷示意標示、菲律賓海板塊聚合方向 Taiwan map: topography, USGS earthquakes coloured by depth showing two opposite-dipping subduction zones, Holocene volcanoes, and labels for the Central Range, Western Foothills, Longitudinal Valley and Philippine Sea plate convergence">
+      <figcaption class="bi"><span class="zh">真實資料版本：地形、USGS 地震（依深度上色）與全新世火山。北邊琉球海溝、南邊馬尼拉海溝的隱沒地震帶方向相反；花東縱谷是菲律賓海板塊與歐亞板塊的縫合線。中央山脈、西部麓山帶、縱谷的位置為示意標示，非精確斷層線。</span><span class="en">Real-data version: topography, USGS earthquakes coloured by depth, and Holocene volcanoes. The Ryukyu Trench (north) and Manila Trench (south) dip in opposite directions; the Longitudinal Valley is the suture between the Philippine Sea and Eurasian plates. Central Range, Western Foothills and valley labels mark approximate locations, not precise fault traces.</span></figcaption>
+    </figure>
     <div>
       <p class="bi"><span class="zh">最簡化的答案是「聚合型」。但真實的臺灣同時包含：</span><span class="en">The simplest answer is "convergent". But real Taiwan contains all of these at once:</span></p>
       <ul class="tw-list">
@@ -496,6 +485,7 @@
       </div>
       <p class="frame">Taiwan is not simply ______; it includes ______, ______ and ______.</p>
       <button class="btn small stamp-btn" data-stamp="taiwan"><span class="bi"><span class="zh">蓋章：我能用多重證據描述臺灣</span><span class="en">Stamp: I can describe Taiwan with multiple lines of evidence</span></span></button>
+      <p class="bi hint"><span class="zh">資料與程式碼：<a href="https://github.com/oceanicdayi/pygmt-map-lab/blob/main/case-studies/taiwan-back-to-taiwan/taiwan_map.py" target="_blank" rel="noopener">pygmt-map-lab 的案例：回到臺灣</a>。</span><span class="en">Data and code: <a href="https://github.com/oceanicdayi/pygmt-map-lab/blob/main/case-studies/taiwan-back-to-taiwan/taiwan_map.py" target="_blank" rel="noopener">pygmt-map-lab's Back to Taiwan case study</a>.</span></p>
     </div>
   </div>
 </section>
