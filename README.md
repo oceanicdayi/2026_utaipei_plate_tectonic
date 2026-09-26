@@ -117,6 +117,7 @@ Observation → Pattern → Model → Explanation → Prediction → Test → Re
 3. 第二節依五個真實案例推進，並在喜馬拉雅案例明確要求修正模型。
 4. 第三節分組進行 Mystery Region，完成預測後才使用 AI。
 5. 結尾回到臺灣（中央山脈、西部麓山帶、縱谷、馬尼拉海溝、琉球海溝），讓學生看到真實板塊環境比單一圖示更複雜。
+6.（可選延伸）用一則正在發生的新聞事件複習因果鏈：例如 2026 年 9 月印尼喀拉喀托之子火山噴發，見姊妹專案 [pygmt-map-lab 的案例](https://github.com/oceanicdayi/pygmt-map-lab/tree/main/case-studies/2026-sunda-strait-krakatau)，讓學生比對新聞描述的地貌變化與巽他海峽隱沒帶模型。
 
 課程收束的一句話：
 
@@ -132,3 +133,5 @@ Observation → Pattern → Model → Explanation → Prediction → Test → Re
 | `artifacts/` | 15 張地球物理證據圖：地震分布、板塊邊界、磁異常條紋、擴張速率、隱沒帶、熱點、大陸漂移復原、地球構造 |
 | `.github/workflows/pages.yml` | GitHub Pages 自動部署 |
 | `README.md` | 本說明 |
+
+延伸案例（真實新聞事件對照）：[2026 巽他海峽・喀拉喀托之子](https://github.com/oceanicdayi/pygmt-map-lab/tree/main/case-studies/2026-sunda-strait-krakatau)，用 PyGMT 畫圖對照隱沒帶模型，收錄於姊妹專案 [pygmt-map-lab](https://github.com/oceanicdayi/pygmt-map-lab)。
