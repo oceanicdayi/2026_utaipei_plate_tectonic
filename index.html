@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Nunito:ital,wght@0,400;0,600;0,800;1,400&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=3">
+<link rel="stylesheet" href="assets/style.css?v=4">
 </head>
 <body class="mode-both">
 
@@ -42,6 +42,7 @@
     <a href="#cases"><span class="bi"><span class="zh">真實案例</span><span class="en">Cases</span></span></a>
     <a href="#predict"><span class="bi"><span class="zh">預測</span><span class="en">Predict</span></span></a>
     <a href="#ai"><span class="bi"><span class="zh">AI 驗證</span><span class="en">AI Check</span></span></a>
+    <a href="#krakatau"><span class="bi"><span class="zh">時事案例</span><span class="en">News case</span></span></a>
     <a href="#language"><span class="bi"><span class="zh">語言角</span><span class="en">Language</span></span></a>
   </nav>
   <div class="tools">
@@ -51,7 +52,7 @@
       <button data-mode="en" title="English only">EN</button>
     </div>
     <div class="passport" title="探究護照 Inquiry passport">
-      <span class="passport-count" id="passport-count">0</span>/<span id="passport-total">9</span>
+      <span class="passport-count" id="passport-count">0</span>/<span id="passport-total">10</span>
     </div>
     <button type="button" class="btn small export-top" data-export title="匯出學習歷程 (.md) · Export portfolio">
       <span aria-hidden="true">⤓</span> <span class="bi"><span class="zh">匯出</span><span class="en">Export</span></span>
@@ -499,9 +500,217 @@
   </div>
 </section>
 
-<!-- ===================== 9. LANGUAGE CORNER ===================== -->
+<!-- ===================== 9. NEWS CASE: ANAK KRAKATAU ===================== -->
+<section id="krakatau" class="section" data-passport="krakatau">
+  <h2 class="sec-title"><span class="blob blob-terracotta"></span><span class="bi"><span class="zh">九、時事案例：喀拉喀托之子「冒出新島」</span><span class="en">9. News case: new land at Anak Krakatau</span></span></h2>
+  <p class="teacher-line">“Can plate motion push up two islands in 25 hours?”<span class="zh">板塊運動能在 25 小時內推出兩座島嗎？</span></p>
+  <p class="bi sub">
+    <span class="zh">一則新聞可以同時練習媒體識讀與板塊構造。這個案例把三種時間尺度串在一起：板塊隱沒（百萬年）、海峽張裂（萬年到百萬年）、火山堆積（幾小時）。先查證新聞，再看構造背景，最後比較尺度。</span>
+    <span class="en">One news story can train media literacy and plate tectonics together. It links three time scales: subduction (millions of years), rifting of the strait (10⁴–10⁶ years) and volcanic deposition (hours). Verify the news first, then look at the tectonic setting, then compare the scales.</span>
+  </p>
+
+  <div class="two-col">
+    <!-- A. media literacy -->
+    <div class="card">
+      <h3 class="bi"><span class="zh">A. 先查證：哪些是觀測，哪些是解讀？</span><span class="en">A. Verify first: measurement or interpretation?</span></h3>
+      <p class="bi"><span class="zh">同一件事，新聞標題寫「冒出 2 座島」，官方講的卻是「待驗證的地貌變化」。把每一句話分類，再展開說明。</span><span class="en">The headline says "two new islands appeared"; the agency says "a landform change that still needs field checking". Sort each statement, then open the note.</span></p>
+      <div class="claim-list" id="claim-list"></div>
+      <p class="frame">A headline is a claim. A measurement is evidence.<span class="zh">標題是一個主張，測量才是證據。</span></p>
+    </div>
+
+    <!-- B. life cycle timeline -->
+    <div class="card">
+      <h3 class="bi"><span class="zh">B. 一座火山島的生命週期</span><span class="en">B. The life cycle of a volcanic island</span></h3>
+      <ol class="timeline">
+        <li><b>1883</b><span class="bi"><span class="zh">大爆發後山體崩毀，留下破火山口。</span><span class="en">The great eruption destroys the edifice and leaves a caldera.</span></span></li>
+        <li><b>1927 →</b><span class="bi"><span class="zh">破火山口內長出新火山「喀拉喀托之子」（Anak Krakatau）並露出海面。</span><span class="en">A new cone, Anak Krakatau ("child of Krakatau"), grows inside the caldera and breaks the sea surface.</span></span></li>
+        <li class="bad"><b>2018</b><span class="bi"><span class="zh">側翼崩塌約 0.116 立方公里，山頂從約 330 公尺降到 120 公尺；隨後的海嘯最高約 13 公尺，437 人罹難。</span><span class="en">Flank collapse of ≈0.116 km³; the summit drops from ≈330 m to 120 m. The tsunami reaches ≈13 m and kills 437 people.</span></span></li>
+        <li><b>2019 →</b><span class="bi"><span class="zh">進入重建期，火山重新生長。</span><span class="en">A rebuilding phase begins and the volcano grows again.</span></span></li>
+        <li class="now"><b>9/4–6</b><span class="bi"><span class="zh">約 25 小時的噴發後，火山本體陸地面積增加約 32.8 公頃，並在西北側距岸約 760 公尺、東南側約 495 公尺處出現兩處新陸地。</span><span class="en">After ≈25 hours of eruption the island gains ≈32.8 ha, and two patches of new land appear ≈760 m offshore to the north-west and ≈495 m to the south-east.</span></span></li>
+      </ol>
+      <div class="board">
+        <strong>Grow → collapse → grow again.</strong>
+        <span class="zh">成長 → 崩塌 → 再成長。這座島不是「一次做好」的地形，而是一個仍在進行的循環。</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- C. tectonic setting -->
+  <div class="card wide krakatau-fig">
+    <div>
+      <h3 class="bi"><span class="zh">C. 構造背景：隱沒帶上的張裂</span><span class="en">C. Tectonic setting: extension on top of a subduction zone</span></h3>
+      <figure class="k-section">
+        <svg viewBox="0 0 720 360" role="img" aria-labelledby="krak-fig-title">
+          <title id="krak-fig-title">巽他海峽的隱沒、張裂與火山剖面示意圖 Schematic section: subduction, extension and volcanism in the Sunda Strait</title>
+          <defs>
+            <clipPath id="k-clip"><rect width="720" height="360" rx="14"/></clipPath>
+            <clipPath id="k-plate"><path d="M168 152 L640 152 L640 236 L360 236 Z"/></clipPath>
+            <linearGradient id="k-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#eef5f8"/><stop offset="1" stop-color="#d7e8f0"/></linearGradient>
+            <linearGradient id="k-sea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cfe3ec"/><stop offset="1" stop-color="#8fb9cd"/></linearGradient>
+            <linearGradient id="k-mantle" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f0c7a8"/><stop offset="1" stop-color="#c96b52"/></linearGradient>
+          </defs>
+          <g clip-path="url(#k-clip)">
+            <rect width="720" height="360" fill="url(#k-mantle)"/>
+            <rect width="720" height="112" fill="url(#k-sky)"/>
+            <rect y="112" width="720" height="40" fill="url(#k-sea)"/>
+
+            <!-- subducting slab, reaching ≈150 km depth under the volcano -->
+            <path d="M152 152 C 250 175, 360 250, 430 348" stroke="#9db98a" stroke-width="34" fill="none" stroke-linecap="round"/>
+            <path d="M152 152 C 250 175, 360 250, 430 348" stroke="#4d6b47" stroke-width="2.5" fill="none" stroke-dasharray="7 7"/>
+            <!-- overriding plate -->
+            <path d="M168 152 L640 152 L640 236 L360 236 Z" fill="#b9d3a5" stroke="#4d6b47" stroke-width="3"/>
+            <!-- trench -->
+            <path d="M124 152 L152 176 L178 152 Z" fill="url(#k-sea)" stroke="#2f3a3f" stroke-width="2.5"/>
+            <!-- magma generation depth band, tied to the 30 and 60 km ticks -->
+            <rect x="168" y="158" width="472" height="46" fill="#f4d35e" opacity=".3" clip-path="url(#k-plate)"/>
+            <path d="M640 158 L672 158 M640 204 L672 204" stroke="#8a5a44" stroke-width="1.5" stroke-dasharray="4 4" fill="none"/>
+            <!-- graben faults, both dipping towards the axis of the strait -->
+            <path d="M280 152 L310 236 M580 152 L550 236" stroke="#2f3a3f" stroke-width="2.5" stroke-dasharray="6 5" fill="none"/>
+            <!-- fluids from the slab, magma reservoir, conduit -->
+            <path d="M412 314 C 432 278, 442 248, 446 216" stroke="#f4d35e" stroke-width="4" fill="none" stroke-dasharray="7 6"/>
+            <path d="M438 222 L446 208 L454 222" stroke="#f4d35e" stroke-width="4" fill="none" stroke-linecap="round"/>
+            <ellipse cx="437" cy="182" rx="26" ry="20" fill="#f4d35e" opacity=".85"/>
+            <path d="M437 162 C 430 140, 444 130, 437 104" stroke="#f4d35e" stroke-width="9" fill="none" stroke-linecap="round"/>
+            <!-- new land: deposits piled from the shallow sea floor up through the surface -->
+            <path d="M316 152 Q 346 56, 376 152 Z" fill="#b98c6a" stroke="#6f4a35" stroke-width="2"/>
+            <path d="M496 152 Q 519 60, 542 152 Z" fill="#b98c6a" stroke="#6f4a35" stroke-width="2"/>
+            <!-- volcano -->
+            <path d="M388 152 L437 76 L486 152 Z" fill="#8a5a44"/>
+            <circle cx="437" cy="70" r="7" fill="#f4d35e"/>
+            <path d="M437 62 C 424 40, 452 34, 441 16" stroke="#8b8b8b" stroke-width="7" fill="none" stroke-linecap="round" opacity=".55"/>
+            <!-- earthquakes along the slab -->
+            <g class="quakes"><circle cx="200" cy="172" r="4"/><circle cx="258" cy="200" r="4"/><circle cx="322" cy="246" r="4"/><circle cx="371" cy="280" r="4"/><circle cx="414" cy="326" r="4"/></g>
+            <!-- convergence arrow -->
+            <path d="M18 140 L112 140 M98 130 L112 140 L98 150" stroke="#2f3a3f" stroke-width="4" fill="none" stroke-linecap="round"/>
+            <!-- extension arrows -->
+            <path d="M372 100 L292 100 M306 90 L292 100 L306 110 M502 100 L582 100 M568 90 L582 100 L568 110" stroke="#b04a3a" stroke-width="4" fill="none" stroke-linecap="round"/>
+
+            <!-- depth scale -->
+            <rect x="664" width="56" height="360" fill="#fbf7ef" opacity=".8"/>
+            <path d="M676 112 L676 348 M668 112 L684 112 M668 189 L681 189 M668 265 L681 265 M668 342 L684 342" stroke="#2f3a3f" stroke-width="2" fill="none"/>
+
+            <text class="k-label sm" x="196" y="62">Sunda Strait 巽他海峽：張裂＋走滑</text>
+            <text class="k-label sm" x="256" y="88" fill="#b04a3a">伸張 extension</text>
+            <text class="k-label sm" x="500" y="88" fill="#b04a3a">伸張 extension</text>
+            <text class="k-label" x="462" y="52">Anak Krakatau</text>
+            <text class="k-label" x="18" y="130">58 mm/yr</text>
+            <text class="k-label sm" x="86" y="104">Sunda Trench 巽他海溝 ↓</text>
+            <text class="k-label sm" x="216" y="138">new land 新陸地 →</text>
+            <text class="k-label sm" x="18" y="208">Indo-Australian plate<tspan x="18" dy="15">印澳板塊</tspan></text>
+            <text class="k-label sm" x="60" y="320">mantle 地函</text>
+            <text class="k-label sm" x="578" y="176">Sunda plate<tspan x="578" dy="15">巽他板塊</tspan></text>
+            <text class="k-label sm" x="316" y="178">magma 30–60 km<tspan x="316" dy="15">岩漿生成深度</tspan></text>
+            <text class="k-label sm" x="462" y="322">slab ≈150 km<tspan x="462" dy="15">隱沒板塊深度</tspan></text>
+            <text class="k-label sm" x="668" y="88">depth<tspan x="668" dy="14">深度</tspan></text>
+            <text class="k-label sm" x="688" y="116">0 km</text>
+            <text class="k-label sm" x="688" y="193">50</text>
+            <text class="k-label sm" x="688" y="269">100</text>
+            <text class="k-label sm" x="688" y="346">150</text>
+          </g>
+        </svg>
+        <figcaption class="bi"><span class="zh">示意圖：深度依右側尺標，垂直方向略為誇大。印澳板塊隱沒到巽他板塊之下，板塊在火山正下方約 150 公里深；岩漿在約 30–60 公里生成，海峽同時處於伸張兼走滑的環境，火山則把噴發物堆在淺海上。</span><span class="en">Schematic; depths follow the scale on the right, vertical exaggeration ≈1.4×. The Indo-Australian plate subducts beneath the Sunda plate and lies ≈150 km below the volcano; magma is generated at ≈30–60 km, the strait is under transtension, and the volcano piles its products onto a shallow sea floor.</span></figcaption>
+      </figure>
+    </div>
+    <div>
+      <h4 class="bi"><span class="zh">三層證據</span><span class="en">Three layers of evidence</span></h4>
+      <ul class="evidence">
+        <li>Sunda arc: Indo-Australian plate subducts beneath the Sunda plate, ≈58 mm/yr trench-normal convergence<small>巽他弧：印澳板塊以每年約 58 mm 隱沒到巽他板塊之下</small></li>
+        <li>Magma generated at ≈30–60 km; the slab beneath Krakatau lies at ≈150 km<small>岩漿生成深度約 30–60 公里；隱沒板塊在約 150 公里深</small></li>
+        <li>The strait sits at the change from frontal subduction (off Java) to oblique subduction (off Sumatra)<small>海峽位在正向隱沒（爪哇外海）與斜向隱沒（蘇門答臘外海）的轉換帶</small></li>
+        <li>The Sumatran forearc sliver moves north-west along dextral faults → transtension<small>蘇門答臘弧前條狀地塊沿右移斷層往西北移動 → 伸張兼走滑</small></li>
+        <li>Total extension across the strait ≈50–100 km; palaeomagnetism shows Sumatra rotating clockwise relative to Java for ≥2 Myr<small>海峽總伸張量約 50–100 公里；古地磁顯示至少 200 萬年來蘇門答臘相對爪哇順時針旋轉</small></li>
+        <li>Focal mechanisms in the strait are extensional, tension axis N130°E; Krakatau sits where two graben zones meet a N–S shallow seismic belt<small>海峽內震源機制呈張裂，張力軸 N130°E；喀拉喀托正位於兩條地塹帶與一條南北向淺震帶的交會處</small></li>
+      </ul>
+      <div class="twist"><b>Why it matters</b><br><span class="bi"><span class="zh">聚合型邊界上竟然是張裂應力——這正好用來打破「聚合＝只有壓力」的簡化模型，並示範「多重證據」如何修正模型。</span><span class="en">Extensional stress on a convergent margin: a clean counter-example to "convergent means compression only", and a demonstration of how multiple lines of evidence revise a model.</span></span></div>
+    </div>
+  </div>
+
+  <!-- D. time-scale lab -->
+  <div class="card wide">
+    <h3 class="bi"><span class="zh">D. 時間尺度實驗：是板塊「推」出來的嗎？</span><span class="en">D. Time-scale lab: did plate motion push this land up?</span></h3>
+    <p class="bi"><span class="zh">拉動滑桿，比較同一段距離：板塊要走多久？這次噴發只用了 25 小時。</span><span class="en">Drag the slider and compare the same distance: how long does the plate need? The eruption took 25 hours.</span></p>
+    <div class="lab">
+      <div class="lab-row">
+        <label><span class="bi"><span class="zh">距離 Distance</span><span class="en">Distance</span></span> <input type="range" id="krak-dist" min="50" max="1000" step="5" value="760"> <output id="krak-dist-out">760 m</output></label>
+      </div>
+      <p class="big" id="krak-scale-result">≈ 13,103 yr</p>
+      <p class="bi hint"><span class="zh">聚合速率取 58 mm/yr（巽他海溝垂直分量）。</span><span class="en">Using the 58 mm/yr trench-normal convergence rate of the Sunda Trench.</span></p>
+      <p class="frame">Plate motion supplies the magma and the pathway. The eruption builds the land.<span class="zh">板塊運動提供岩漿來源與張裂通道，火山作用才是直接造出陸地的原因。</span></p>
+    </div>
+  </div>
+
+  <!-- E. classroom use -->
+  <h3 class="sub-head bi"><span class="zh">E. 課堂怎麼用</span><span class="en">E. How to use it in class</span></h3>
+  <div class="lesson-grid">
+    <article class="card">
+      <h4 class="bi"><span class="zh">釐清迷思</span><span class="en">Break the misconception</span></h4>
+      <p class="bi"><span class="zh">「新島是板塊推出來的」是錯的。板塊一年只移動幾公分；這次的新陸地是 25 小時噴發堆出來的。讓學生自己算出兩個數量級的差距。</span><span class="en">"Plates pushed the islands up" is wrong. Plates move a few centimetres a year; this land was piled up in 25 hours. Let students compute the gap themselves.</span></p>
+    </article>
+    <article class="card">
+      <h4 class="bi"><span class="zh">連結臺灣</span><span class="en">Link back to Taiwan</span></h4>
+      <p class="bi"><span class="zh">巽他海峽＝隱沒帶火山弧＋張裂。可以對照沖繩海槽的弧後張裂與龜山島，也可以對照呂宋島弧的綠島、蘭嶼。</span><span class="en">The Sunda Strait = a subduction-related arc plus extension. Compare it with back-arc rifting in the Okinawa Trough (Guishan Island) and with the Luzon arc (Green Island, Orchid Island).</span></p>
+      <a class="jump" href="#taiwan">→ #taiwan</a>
+    </article>
+    <article class="card">
+      <h4 class="bi"><span class="zh">連結地震學</span><span class="en">Link to seismology</span></h4>
+      <p class="bi"><span class="zh">2018 年的崩塌沒有產生強烈的短週期地動，但寬頻地震儀記錄得很清楚。海嘯在毫無預警下侵襲沿岸——正好討論以地震規模為基礎的預警系統有哪些盲點。</span><span class="en">The 2018 collapse radiated little short-period energy but was clear on broadband seismometers. The tsunami arrived with no warning: a case study in the blind spots of magnitude-based warning systems.</span></p>
+    </article>
+    <article class="card">
+      <h4 class="bi"><span class="zh">動手活動：自己量一次</span><span class="en">Hands-on: measure it yourself</span></h4>
+      <p class="bi"><span class="zh">用 Copernicus Browser 比較噴發前後的 Sentinel-2 影像，讓學生自己估算面積變化，再和官方公布的 32.8 公頃對照，討論誤差從哪裡來（雲、潮位、解析度、判釋標準）。</span><span class="en">Compare Sentinel-2 scenes before and after the eruption in the Copernicus Browser, estimate the area change, then check it against the official 32.8 ha and discuss where the difference comes from (cloud, tide, resolution, interpretation).</span></p>
+      <a class="jump" href="https://browser.dataspace.copernicus.eu/" target="_blank" rel="noopener">→ Copernicus Browser</a>
+    </article>
+    <article class="card">
+      <h4 class="bi"><span class="zh">追問：這塊陸地留得住嗎？</span><span class="en">Follow-up: will the new land survive?</span></h4>
+      <p class="bi"><span class="zh">鬆散的火山碎屑堆在淺海，會被波浪與海流侵蝕。請學生提出一個可以檢驗的預測，並說明要用什麼資料驗證。</span><span class="en">Loose volcanic debris on a shallow sea floor is attacked by waves and currents. Ask students for one testable prediction and the data they would use to check it.</span></p>
+    </article>
+    <article class="card">
+      <h4 class="bi"><span class="zh">語言任務 CLIL</span><span class="en">CLIL language task</span></h4>
+      <p class="bi"><span class="zh">用本頁的句型把新聞改寫成一句科學陳述，先說觀測，再說解讀。</span><span class="en">Rewrite the headline as one scientific sentence using the page's frames: observation first, interpretation second.</span></p>
+      <p class="frame">We observe ______, which is interpreted as ______, but it still needs ______.</p>
+    </article>
+  </div>
+
+  <!-- F. CER -->
+  <div class="two-col krakatau-cer">
+    <div class="card">
+      <h3 class="bi"><span class="zh">F. 寫下你的 CER：這兩塊新陸地是怎麼來的？</span><span class="en">F. Write your CER: where did this new land come from?</span></h3>
+      <form class="cer-form">
+        <label><b>Claim</b><span class="bi"><span class="zh">主張</span><span class="en">Claim</span></span><textarea name="krakatau-claim" rows="2" placeholder="We think the new land is …"></textarea></label>
+        <label><b>Evidence</b><span class="bi"><span class="zh">證據</span><span class="en">Evidence</span></span><textarea name="krakatau-evidence" rows="2" placeholder="We observe …"></textarea></label>
+        <label><b>Reasoning</b><span class="bi"><span class="zh">推理</span><span class="en">Reasoning</span></span><textarea name="krakatau-reasoning" rows="3" placeholder="This can be explained by …"></textarea></label>
+      </form>
+      <details class="answer">
+        <summary><span class="bi"><span class="zh">展開參考 CER（寫完再看）</span><span class="en">Open the model CER (after writing yours)</span></span></summary>
+        <div class="cer-mini">
+          <div><b>Claim</b><span class="bi"><span class="zh">新陸地是噴發物在淺海堆積形成的火山地形，不是板塊運動抬升的島。</span><span class="en">The new land is a volcanic deposit built on a shallow sea floor, not an island uplifted by plate motion.</span></span></div>
+          <div><b>Evidence</b><span class="bi"><span class="zh">它緊鄰活火山、出現在約 25 小時的噴發之後、火山本體同時增加約 32.8 公頃，而古破火山口一帶海底本來就淺。</span><span class="en">It lies next to an active volcano, appeared right after a ≈25-hour eruption, the island itself gained ≈32.8 ha at the same time, and the sea floor inside the old caldera is shallow.</span></span></div>
+          <div><b>Reasoning</b><span class="bi"><span class="zh">隱沒作用提供岩漿、張裂提供通道，但它們的速率是每年公分等級；能在幾小時內堆出陸地的只有火山噴發的火山灰、岩塊與熔岩。因此板塊運動是背景條件，火山作用才是直接原因。</span><span class="en">Subduction supplies the magma and extension supplies the pathway, but both work at centimetres per year. Only erupted ash, blocks and lava can build land in hours, so plate motion is the background condition and volcanism is the immediate cause.</span></span></div>
+        </div>
+      </details>
+      <button class="btn small stamp-btn" data-stamp="krakatau"><span class="bi"><span class="zh">蓋章：我能分辨新聞主張與科學證據</span><span class="en">Stamp: I can separate a news claim from scientific evidence</span></span></button>
+    </div>
+    <div class="card">
+      <h3 class="bi"><span class="zh">查證來源</span><span class="en">Sources checked</span></h3>
+      <p class="bi hint"><span class="zh">課堂上請學生打開至少兩個不同性質的來源（媒體、官方／通訊社、期刊），並說出它們的差別。</span><span class="en">Ask students to open at least two different kinds of source (media, agency/wire, journal) and describe how they differ.</span></p>
+      <ul class="src-list">
+        <li><span class="src-tag">媒體 Media</span><a href="https://www.nownews.com/news/6878103" target="_blank" rel="noopener">NOWnews：火山噴發後冒出 2 座島？</a></li>
+        <li><span class="src-tag">通訊社 Wire</span><a href="https://www.antaranews.com/berita/5757728/ada-daratan-baru-di-dekat-anak-krakatau-ini-penjelasan-ahli" target="_blank" rel="noopener">Antara：Ada daratan baru di dekat Anak Krakatau, ini penjelasan ahli</a></li>
+        <li><span class="src-tag">通訊社 Wire</span><a href="https://www.antaranews.com/berita/5755019/runtuh-pada-2018-peneliti-brin-ungkap-anak-krakatau-kini-tumbuh-lagi" target="_blank" rel="noopener">Antara：Runtuh pada 2018, peneliti BRIN ungkap Anak Krakatau kini tumbuh lagi</a></li>
+        <li><span class="src-tag">期刊 Journal</span><a href="https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/90TC00285" target="_blank" rel="noopener">Harjono et al. 1991, <i>Tectonics</i>：Seismicity of the Sunda Strait</a></li>
+        <li><span class="src-tag">期刊 Journal</span><a href="https://link.springer.com/article/10.1007/BF00177221" target="_blank" rel="noopener">The Krakatau islands: the geotectonic setting</a></li>
+        <li><span class="src-tag">期刊 Journal</span><a href="https://academic.oup.com/petrology/article/54/1/149/1443885" target="_blank" rel="noopener">Crustal differentiation processes at Krakatau, <i>J. Petrology</i></a></li>
+        <li><span class="src-tag">期刊 Journal</span><a href="https://www.science.org/doi/10.1126/sciadv.aaz1377" target="_blank" rel="noopener">Ye et al. 2020, <i>Science Advances</i>：2018 flank collapse &amp; tsunami</a></li>
+        <li><span class="src-tag">期刊 Journal</span><a href="https://link.springer.com/article/10.1186/s40562-025-00414-5" target="_blank" rel="noopener">Morphological changes of Anak Krakatau after 2018</a></li>
+        <li><span class="src-tag">科普 Outreach</span><a href="https://www.volcanocafe.org/prelude-to-krakatau-part-one/" target="_blank" rel="noopener">VolcanoCafe：Prelude to Krakatau</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 10. LANGUAGE CORNER ===================== -->
 <section id="language" class="section" data-passport="language">
-  <h2 class="sec-title"><span class="blob blob-terracotta"></span><span class="bi"><span class="zh">九、CLIL 語言角</span><span class="en">9. CLIL language corner</span></span></h2>
+  <h2 class="sec-title"><span class="blob blob-terracotta"></span><span class="bi"><span class="zh">十、CLIL 語言角</span><span class="en">10. CLIL language corner</span></span></h2>
   <p class="bi sub"><span class="zh">不必背很多英文，只要反覆使用幾個句型。點喇叭聽發音，點句子複製。</span><span class="en">You don't need a lot of English; you need a few frames used again and again. Tap the speaker to listen, tap a sentence to copy it.</span></p>
 
   <div class="two-col">
@@ -545,16 +754,16 @@
   </div>
 </section>
 
-<!-- ===================== 10. EXIT TICKETS ===================== -->
+<!-- ===================== 11. EXIT TICKETS ===================== -->
 <section id="exit" class="section">
-  <h2 class="sec-title"><span class="blob blob-ocean"></span><span class="bi"><span class="zh">十、Exit Tickets</span><span class="en">10. Exit tickets</span></span></h2>
+  <h2 class="sec-title"><span class="blob blob-ocean"></span><span class="bi"><span class="zh">十一、Exit Tickets</span><span class="en">11. Exit tickets</span></span></h2>
   <p class="bi sub"><span class="zh">每節課最後五分鐘。先寫自己的答案，再點開參考答案。</span><span class="en">The last five minutes of each lesson. Write your own answer first, then open the reference.</span></p>
   <div class="ticket-grid" id="ticket-grid"></div>
 </section>
 
-<!-- ===================== 11. ASSESSMENT ===================== -->
+<!-- ===================== 12. ASSESSMENT ===================== -->
 <section id="assess" class="section">
-  <h2 class="sec-title"><span class="blob blob-ochre"></span><span class="bi"><span class="zh">十一、評量與學習歷程</span><span class="en">11. Assessment &amp; portfolio</span></span></h2>
+  <h2 class="sec-title"><span class="blob blob-ochre"></span><span class="bi"><span class="zh">十二、評量與學習歷程</span><span class="en">12. Assessment &amp; portfolio</span></span></h2>
   <div class="two-col">
     <div class="card">
       <h3 class="bi"><span class="zh">評量設計</span><span class="en">Rubric</span></h3>
@@ -610,6 +819,6 @@
 </footer>
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
-<script src="assets/app.js?v=3"></script>
+<script src="assets/app.js?v=4"></script>
 </body>
 </html>

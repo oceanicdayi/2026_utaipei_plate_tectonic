@@ -272,6 +272,64 @@
   }
   checkRegions();
 
+  /* ---------------- news case: Anak Krakatau ---------------- */
+  const claimKinds = {
+    measured: { zh: "官方觀測", en: "Measured" },
+    interpretation: { zh: "推論或標題", en: "Interpretation / headline" }
+  };
+  const claims = [
+    { id: "1", text: ["火山西北側距岸約 760 公尺、東南側約 495 公尺處出現新陸地。", "New land appears ≈760 m offshore to the north-west and ≈495 m to the south-east of the volcano."],
+      kind: "measured", note: ["這是量出來的位置與距離，可以在影像上檢查。", "These are measured positions and distances; they can be checked on satellite imagery."] },
+    { id: "2", text: ["火山本體陸地面積增加約 32.8 公頃。", "The island itself gained about 32.8 hectares."],
+      kind: "measured", note: ["面積是可重算的量：學生自己量 Sentinel-2 影像就能對照。", "Area is a quantity you can recompute: students can measure Sentinel-2 scenes and compare."] },
+    { id: "3", text: ["印尼外海「冒出 2 座島」。", "\"Two new islands have appeared\" off Indonesia."],
+      kind: "interpretation", note: ["官方比較保守：這兩處小隆起還不能確定是島或新火山，解讀只是暫時的，需要實地查證。", "The geological agency is more careful: it cannot yet confirm whether these are islands or new vents; the reading is provisional and needs field checking."] },
+    { id: "4", text: ["新陸地是火山灰、岩塊與熔岩沉積在淺海中累積而成。", "The new land is accumulated ash, blocks and lava deposited on a shallow sea floor."],
+      kind: "interpretation", note: ["這是專家提出的機制解釋（古破火山口一帶海底較淺，堆積物容易露出海面），合理但仍屬推論。", "This is an expert's proposed mechanism (the sea floor inside the old caldera is shallow, so deposits emerge easily): reasonable, but still an interpretation."] },
+    { id: "5", text: ["這是板塊運動把新陸地推出海面。", "Plate motion pushed the new land above sea level."],
+      kind: "interpretation", note: ["而且是站不住腳的推論。板塊一年只走幾公分，這塊陸地是約 25 小時的噴發堆出來的。", "And a weak one. Plates move centimetres per year; this land was built by an eruption lasting about 25 hours."] }
+  ];
+  const claimList = $("#claim-list");
+  if (claimList) {
+    claimList.innerHTML = claims.map(c => `
+      <div class="claim" data-id="${c.id}">
+        <p class="claim-text">${bi(c.text[0], c.text[1])}</p>
+        <div class="choices row">${Object.entries(claimKinds).map(([k, v]) => `<button class="choice" data-pick="${k}">${bi(v.zh, v.en)}</button>`).join("")}</div>
+        <div class="feedback"></div>
+      </div>`).join("");
+    $$(".claim", claimList).forEach(card => {
+      const c = claims.find(x => x.id === card.dataset.id), fb = $(".feedback", card);
+      const show = (pick) => {
+        $$(".choice", card).forEach(b => { b.classList.remove("right", "wrong"); if (b.dataset.pick === pick) b.classList.add(pick === c.kind ? "right" : "wrong"); });
+        if (pick === c.kind) {
+          fb.className = "feedback ok";
+          fb.innerHTML = `<b>${claimKinds[c.kind].zh} · ${claimKinds[c.kind].en}</b><br>${bi(c.note[0], c.note[1])}`;
+          store.set("claim:" + c.id, true); checkClaims();
+        } else {
+          fb.className = "feedback no";
+          fb.innerHTML = bi("再問一次：這句話是量出來的，還是有人對觀測做的解讀？", "Ask again: was this measured, or is it somebody's reading of a measurement?");
+        }
+      };
+      $$(".choice", card).forEach(b => b.addEventListener("click", () => show(b.dataset.pick)));
+      if (store.get("claim:" + c.id, false)) show(c.kind);
+    });
+  }
+  function checkClaims() {
+    if (claims.every(c => store.get("claim:" + c.id, false)) && !stamps.has("krakatau")) {
+      stamps.add("krakatau"); store.set("stamps", [...stamps]); renderStamps(); toast("News checked ✓ 查證完成");
+    }
+  }
+  checkClaims();
+
+  const CONVERGENCE_MM_YR = 58, ERUPTION_HOURS = 25;
+  const kD = $("#krak-dist"), kDOut = $("#krak-dist-out"), kRes = $("#krak-scale-result");
+  function calcScale() {
+    const m = +kD.value, yr = m / (CONVERGENCE_MM_YR / 1000), ratio = yr * 365.25 * 24 / ERUPTION_HOURS;
+    kDOut.textContent = m + " m";
+    kRes.innerHTML = `≈ ${Math.round(yr).toLocaleString("en-US")} yr <small>板塊以 58 mm/yr 走 ${m} 公尺所需時間，是這次 25 小時噴發的 ${Math.round(ratio).toLocaleString("en-US")} 倍 · the plate needs ${Math.round(yr).toLocaleString("en-US")} years to cover ${m} m, about ${Math.round(ratio).toLocaleString("en-US")}× longer than the 25-hour eruption</small>`;
+  }
+  if (kD) { kD.addEventListener("input", calcScale); calcScale(); }
+
   /* ---------------- CLIL frames + speech ---------------- */
   const frames = [
     ["Observation", "We observe that ______.", "我們觀察到……"],
@@ -332,10 +390,13 @@
       `## 3. 真實案例 CER`, ``,
       ...cases.flatMap(c => [`### ${c.en} · ${c.zh}`, `- **Claim**: ${store.get(`field:cer-${c.id}-claim`, "") || "—"}`, `- **Evidence**: ${store.get(`field:cer-${c.id}-evidence`, "") || "—"}`, `- **Reasoning**: ${store.get(`field:cer-${c.id}-reasoning`, "") || "—"}`, ``]),
       `## 4. Mystery Region 預測 Predictions`, ``, ...regions.map(r => `- Region ${r.id} (${store.get("region:" + r.id, false) ? "✓" : "—"}): ${store.get(`field:predict-${r.id}`, "") || "—"}`), ``,
-      `## 5. AI 驗證與模型修正 AI check & revision`, ``,
+      `## 5. 時事案例 Anak Krakatau`, ``,
+      `- **新聞查證 News check**: ${claims.filter(c => store.get("claim:" + c.id, false)).length} / ${claims.length}`,
+      `- **Claim**: ${store.get("field:krakatau-claim", "") || "—"}`, `- **Evidence**: ${store.get("field:krakatau-evidence", "") || "—"}`, `- **Reasoning**: ${store.get("field:krakatau-reasoning", "") || "—"}`, ``,
+      `## 6. AI 驗證與模型修正 AI check & revision`, ``,
       `- **Original model 原始模型**: ${v("original")}`, `- **Prompt**: ${v("prompt")}`, `- **AI response AI 回答**: ${v("response")}`, `- **Agree / disagree 同意／不同意**: ${v("agree")}`, `- **Evidence 證據**: ${v("evidence")}`, `- **Revised model 修正後模型**: ${v("revised")}`, `- **Reflection 反思**: ${v("reflection")}`, ``,
-      `## 6. Exit tickets`, ``, ...tickets.flatMap((t, ti) => [`### ${t.title}`, ...t.qs.map((q, qi) => `- Q${qi + 1}: ${store.get(`field:ticket-${ti}-${qi}`, "") || "—"}`), ``]),
-      `## 7. 探究護照 Inquiry passport`, ``, `${stamps.size} / ${total} stamps: ${[...stamps].join(", ") || "—"}`, ``
+      `## 7. Exit tickets`, ``, ...tickets.flatMap((t, ti) => [`### ${t.title}`, ...t.qs.map((q, qi) => `- Q${qi + 1}: ${store.get(`field:ticket-${ti}-${qi}`, "") || "—"}`), ``]),
+      `## 8. 探究護照 Inquiry passport`, ``, `${stamps.size} / ${total} stamps: ${[...stamps].join(", ") || "—"}`, ``
     ];
     const blob = new Blob([lines.join("\n")], { type: "text/markdown;charset=utf-8" });
     const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = `plate-tectonics-portfolio-${date}.md`; a.click();

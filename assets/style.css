@@ -314,6 +314,36 @@ textarea:focus,select:focus{outline:2px solid var(--ocean);border-color:transpar
 .tw-list b{font-family:var(--font-en)}
 .c-brown{color:var(--brown)} .c-terra{color:var(--terra)} .c-ochre{color:#a98a2e}
 
+/* ---------- news case (Anak Krakatau) ---------- */
+.sub-head{margin:1.6rem 0 .2rem;font-family:var(--font-zh-title);font-size:1.15rem}
+.sub-head .en{font-family:var(--font-hand);color:var(--brown)}
+.mode-both .sub-head .bi .zh + .en{display:inline;margin-left:.5em}
+.claim-list{display:grid;gap:.7rem;margin:.6rem 0}
+.claim{padding:.6rem .8rem;border-radius:12px;background:rgba(255,255,255,.65);border:1.5px solid rgba(47,58,63,.12)}
+.claim-text{margin:0 0 .4rem;font-size:.95rem}
+.claim .feedback{font-size:.88rem;min-height:0}
+.claim .feedback:empty{display:none}
+.choices.row{grid-template-columns:1fr 1fr;gap:.5rem}
+.choices.row .choice{justify-content:center;text-align:center;font-size:.9rem;padding:.4rem .6rem}
+.timeline{list-style:none;padding:0;margin:.6rem 0 0;border-left:3px solid var(--ochre)}
+.timeline li{position:relative;display:grid;grid-template-columns:5.2em 1fr;gap:.7rem;padding:.45rem 0 .45rem 1rem;font-size:.93rem}
+.timeline li::before{content:"";position:absolute;left:-9px;top:1.05rem;width:14px;height:14px;border-radius:50%;background:var(--ochre);border:2px solid var(--paper-2)}
+.timeline li.bad::before{background:#b04a3a}
+.timeline li.now::before{background:var(--terra);box-shadow:0 0 0 5px rgba(217,139,107,.3)}
+.timeline b{font-family:var(--font-hand);font-size:1.3rem;color:var(--brown)}
+.krakatau-fig{display:grid;grid-template-columns:1.35fr 1fr;gap:1.4rem;align-items:start}
+@media (max-width:900px){.krakatau-fig{grid-template-columns:1fr}}
+.k-section{margin:.6rem 0 0}
+.k-section svg{width:100%;border-radius:14px;box-shadow:inset 0 0 0 1px rgba(47,58,63,.12)}
+.k-label{font-family:var(--font-hand);font-size:16px;fill:var(--ink)}
+.k-label.sm{font-family:var(--font-zh);font-size:11.5px;fill:#2f3a3f}
+.krakatau-cer{margin-top:1.4rem}
+.krakatau-cer .cer-form label > .bi{font-weight:400;font-size:.85rem;color:var(--ink-soft)}
+.src-list{list-style:none;padding:0;margin:.5rem 0 0}
+.src-list li{display:grid;grid-template-columns:7.2em 1fr;gap:.5rem;padding:.3rem 0;border-bottom:1px dashed rgba(47,58,63,.15);font-size:.88rem}
+.src-tag{font-size:.75rem;color:var(--ink-soft);background:var(--ocean-wash);border-radius:999px;padding:.05rem .5rem;text-align:center;align-self:start}
+@media (max-width:640px){.src-list li,.timeline li{grid-template-columns:1fr}}
+
 /* ---------- language ---------- */
 .frames-list{list-style:none;padding:0;margin:.4rem 0}
 .frames-list li{display:grid;grid-template-columns:1fr auto;gap:.6rem;align-items:center;padding:.5rem .6rem;border-radius:12px;margin:.3rem 0;background:#fff;border:1.5px solid rgba(47,58,63,.1)}
