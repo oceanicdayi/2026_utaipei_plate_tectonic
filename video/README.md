@@ -27,6 +27,24 @@ python3 video/build_krakatau_video.py
 
 中間檔放在 `video/build/`（不進版控）。語音依句子內容快取，改一句旁白只會重新合成那一句。
 
+## PyGMT 地形圖轉 STL
+
+`build_stl_video.py` 產生實作頁「從地形圖到 3D 列印」開頭的中文教學影片，說明同一份高程網格如何變成可切片的 STL：
+
+| 輸出 | 說明 |
+|---|---|
+| `../artifacts/23-pygmt_stl_teaching_video.mp4` | 1080p、H.264/AAC |
+| `../artifacts/23-pygmt_stl_teaching_video.vtt` | WebVTT 字幕 |
+| `../artifacts/23-pygmt_stl_teaching_video_poster.jpg` | 影片封面 |
+
+畫面使用 `pygmt_3dprint/example/` 的臺灣地形圖與列印預覽。中間檔在 `video/build_stl/`。
+
+```bash
+python3 video/build_stl_video.py
+```
+
+中文字型預設讀 `/tmp/cjkfonts/NotoSansTC.ttf` 與 `NotoSerifTC.ttf`，或用環境變數 `CJK_FONT_DIR` 指定目錄。找不到時改用系統的文泉驛微米黑。
+
 可選的環境變數：
 
 - `SSL_CERT_FILE`：在需要自訂 CA 的網路代理環境中，讓 edge-tts 使用這份憑證
