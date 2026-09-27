@@ -1,5 +1,7 @@
 # 從 PyGMT 地形圖到 3D 列印檔
 
+先看教學影片（約數分鐘，中文旁白與字幕）：[`artifacts/22-pygmt_stl_teaching_video.mp4`](../artifacts/22-pygmt_stl_teaching_video.mp4)，網頁版嵌在 [`pygmt-3dprint.html`](../pygmt-3dprint.html)。
+
 照下面的順序做。每一次只做一步，看到「檢查」裡的結果再進下一步。
 做完會得到兩樣東西：一張北方朝上的地形圖（PNG），和一個單位是公釐、可以直接切片的模型（STL）。
 
