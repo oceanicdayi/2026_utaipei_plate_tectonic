@@ -133,6 +133,8 @@ Observation → Pattern → Model → Explanation → Prediction → Test → Re
 | `index.html`、`assets/` | 互動式網頁（HTML、水彩風 CSS、互動 JS） |
 | `artifacts/` | 15 張地球物理證據圖：地震分布、板塊邊界、磁異常條紋、擴張速率、隱沒帶、熱點、大陸漂移復原、地球構造 |
 | `artifacts/喀拉喀托之子與板塊構造.pdf` | 時事延伸投影片：2026 年 9 月喀拉喀托之子噴發新聞、巽他海峽的隱沒轉張裂構造、與台灣對照 |
+| `artifacts/21-krakatau_teaching_video.mp4`（附 `.vtt` 字幕、封面圖） | 喀拉喀托之子時事案例的中文教學影片（5 分 27 秒，語音合成旁白、內嵌字幕），放在互動網頁「九、時事案例」開頭 |
+| `video/` | 產生上述影片的腳本與說明（旁白、畫面都在 `build_krakatau_video.py`，改完重跑即可） |
 | `artifacts/16-sunda_strait_map.png`、`artifacts/17-sunda_strait_section.png` | 巽他海峽案例的地圖與 A–B 深度剖面（來自 pygmt-map-lab，資料驅動：USGS 地震、NCEI/GVP 火山、GMT 地形） |
 | `.github/workflows/pages.yml` | GitHub Pages 自動部署 |
 | `README.md` | 本說明 |
