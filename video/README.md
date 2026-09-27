@@ -33,9 +33,9 @@ python3 video/build_krakatau_video.py
 
 | 輸出 | 說明 |
 |---|---|
-| `../artifacts/22-pygmt_stl_teaching_video.mp4` | 1080p、H.264/AAC |
-| `../artifacts/22-pygmt_stl_teaching_video.vtt` | WebVTT 字幕 |
-| `../artifacts/22-pygmt_stl_teaching_video_poster.jpg` | 影片封面 |
+| `../artifacts/23-pygmt_stl_teaching_video.mp4` | 1080p、H.264/AAC |
+| `../artifacts/23-pygmt_stl_teaching_video.vtt` | WebVTT 字幕 |
+| `../artifacts/23-pygmt_stl_teaching_video_poster.jpg` | 影片封面 |
 
 畫面使用 `pygmt_3dprint/example/` 的臺灣地形圖與列印預覽。中間檔在 `video/build_stl/`。
 

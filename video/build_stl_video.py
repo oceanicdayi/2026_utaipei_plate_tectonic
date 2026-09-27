@@ -27,9 +27,9 @@ ROOT = HERE.parent
 ART = ROOT / "artifacts"
 EX = ROOT / "pygmt_3dprint" / "example"
 BUILD = HERE / "build_stl"
-VIDEO = ART / "22-pygmt_stl_teaching_video.mp4"
-VTT = ART / "22-pygmt_stl_teaching_video.vtt"
-POSTER = ART / "22-pygmt_stl_teaching_video_poster.jpg"
+VIDEO = ART / "23-pygmt_stl_teaching_video.mp4"
+VTT = ART / "23-pygmt_stl_teaching_video.vtt"
+POSTER = ART / "23-pygmt_stl_teaching_video_poster.jpg"
 
 VOICE, RATE = "zh-TW-HsiaoChenNeural", "-4%"
 LINE_TAIL = 0.28

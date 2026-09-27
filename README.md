@@ -133,11 +133,11 @@ Observation → Pattern → Model → Explanation → Prediction → Test → Re
 | `板塊構造學說_三節課完整教材.md` | 三節課教學設計：學習目標、分鐘流程、案例、CER、Exit Ticket、評量與 AI 學習歷程 |
 | `index.html`、`assets/` | 互動式網頁（HTML、水彩風 CSS、互動 JS） |
 | [`pygmt-3dprint.html`](pygmt-3dprint.html)、[`pygmt_3dprint/`](pygmt_3dprint/) | 實作：用 PyGMT 畫地形圖，再把高程網格做成 3D 列印用的 STL。步驟、範例圖與範例 STL 都在這裡 |
-| `artifacts/22-pygmt_stl_teaching_video.mp4`（附 `.vtt`、封面圖） | 上述實作的中文教學影片：地形圖如何轉成可切片的 STL。產生腳本在 `video/build_stl_video.py` |
 | `artifacts/` | 15 張地球物理證據圖：地震分布、板塊邊界、磁異常條紋、擴張速率、隱沒帶、熱點、大陸漂移復原、地球構造 |
 | `artifacts/喀拉喀托之子與板塊構造.pdf` | 時事延伸投影片：2026 年 9 月喀拉喀托之子噴發新聞、巽他海峽的隱沒轉張裂構造、與台灣對照 |
 | `artifacts/21-krakatau_teaching_video.mp4`（附 `.vtt` 字幕、封面圖） | 喀拉喀托之子時事案例的中文教學影片（5 分 27 秒，語音合成旁白、內嵌字幕），放在互動網頁「九、時事案例」開頭 |
 | `artifacts/22-notebook_github_tutorial.mp4`（附 `.vtt` 字幕、封面圖） | PyGMT 實作的操作教學影片（8 分鐘）：開啟 Colab、執行 Notebook、看懂錯誤、用 GitHub 繳交；放在互動網頁「三節課地圖」下方。產生腳本在 [pygmt-map-lab 的 `video/`](https://github.com/oceanicdayi/pygmt-map-lab/tree/main/video) |
+| `artifacts/23-pygmt_stl_teaching_video.mp4`（附 `.vtt`、封面圖） | 地形圖轉成 3D 列印 STL 的中文教學影片（3 分鐘），嵌在 [`pygmt-3dprint.html`](pygmt-3dprint.html)。產生腳本是 `video/build_stl_video.py` |
 | `video/` | 產生上述影片的腳本與說明（旁白、畫面都在 `build_krakatau_video.py`，改完重跑即可） |
 | `artifacts/16-sunda_strait_map.png`、`artifacts/17-sunda_strait_section.png` | 巽他海峽案例的地圖與 A–B 深度剖面（來自 pygmt-map-lab，資料驅動：USGS 地震、NCEI/GVP 火山、GMT 地形） |
 | `.github/workflows/pages.yml` | GitHub Pages 自動部署 |
