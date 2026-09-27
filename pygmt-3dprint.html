@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>從 PyGMT 地形圖到 3D 列印檔｜閱讀地球</title>
 <meta name="description" content="照步驟用 PyGMT 畫臺灣或巽他海峽的地形圖，再把同一份高程網格做成可以切片的 STL。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Nunito:ital,wght@0,400;0,600;0,800;1,400&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css?v=4">
 <style>
   .steps{list-style:none;padding:0;margin:1rem 0 0;display:grid;gap:1rem}
@@ -33,6 +36,13 @@
     <a href="index.html#krakatau"><span class="bi"><span class="zh">時事案例</span><span class="en">News case</span></span></a>
     <a href="pygmt_3dprint/README.md"><span class="bi"><span class="zh">純文字步驟</span><span class="en">Markdown</span></span></a>
   </nav>
+  <div class="tools">
+    <div class="lang-toggle" role="group" aria-label="language">
+      <button type="button" data-mode="zh" title="只顯示中文">中</button>
+      <button type="button" data-mode="both" title="雙語 Bilingual">中 + EN</button>
+      <button type="button" data-mode="en" title="English only">EN</button>
+    </div>
+  </div>
 </header>
 
 <main>
@@ -48,7 +58,7 @@
       <span class="en">One elevation grid becomes a north-up map and then a millimetre STL a slicer can open. The default region is Taiwan and its trenches; the second is the Sunda Strait.</span>
     </p>
     <div class="hero-actions">
-      <a class="btn primary" href="#step1"><span class="bi"><span class="zh">從步驟 1 開始</span><span class="en">Start at step 1</span></span></a>
+      <a class="btn primary" href="#class"><span class="bi"><span class="zh">先看這一節做什麼</span><span class="en">See what this period does</span></span></a>
       <a class="btn ghost" href="pygmt_3dprint/example/taiwan_relief.stl" download><span class="bi"><span class="zh">先下載範例 STL</span><span class="en">Download the example STL</span></span></a>
     </div>
   </div>
@@ -66,6 +76,33 @@
   </div>
 </section>
 
+<section class="section" id="class">
+  <h2 class="sec-title"><span class="blob blob-ochre"></span><span class="bi"><span class="zh">這一節實際做什麼</span><span class="en">What this period actually does</span></span></h2>
+  <p class="bi sub"><span class="zh">三節課各 50 分鐘已經排滿。這份實作是另外一節。下面三條路選一條，不要在同一節裡從安裝走到巽他海峽。</span><span class="en">The three 50-minute lessons are already full. This lab is a separate period. Pick one path. Do not install software and also reach the Sunda Strait in the same sitting.</span></p>
+  <div class="lesson-grid">
+    <article class="card">
+      <h3 class="bi"><span class="zh">A. 沒有印表機（約 25 分鐘）</span><span class="en">A. No printer (about 25 min)</span></h3>
+      <p class="bi"><span class="zh">學習目標用這條就夠：垂直誇大、海平面不是底座、32.8 公頃看不到。</span><span class="en">This path covers the goals: exaggeration, sea level is not the base, and 32.8 hectares do not show up.</span></p>
+      <ol>
+        <li class="bi"><span class="zh">看上一節的 3 分鐘影片。</span><span class="en">Watch the 3-minute video in the previous section.</span></li>
+        <li class="bi"><span class="zh">看步驟 3 的地形圖和步驟 5 的立體預覽，指出海溝和中央山脈。</span><span class="en">On the step 3 map and the step 5 preview, point to the trench and the Central Range.</span></li>
+        <li class="bi"><span class="zh">用步驟 4 表格裡的數字回答步驟 7。不必跑程式，也不必每人一個 STL。</span><span class="en">Answer step 7 from the numbers in the step 4 table. No code, and not one STL per student.</span></li>
+      </ol>
+    </article>
+    <article class="card">
+      <h3 class="bi"><span class="zh">B. 有一台印表機</span><span class="en">B. One printer</span></h3>
+      <p class="bi"><span class="zh">全班共用一個模型，老師在前一晚印好。範例 STL 是 140 × 162.5 × 26 mm，加上 brim 之後要確認列印床放得下，而且大約要印一整晚。</span><span class="en">One shared model, printed by the teacher the night before. The example STL is 140 × 162.5 × 26 mm. Check that it still fits once a brim is added, and expect an overnight print.</span></p>
+      <p class="bi"><span class="zh">想印小一點，在 <code>settings.py</code> 改成 <code>WIDTH_MM = 80</code>、<code>RELIEF_MM = 13</code>。誇大仍約 10 倍，尺寸約 80 × 93 × 17 mm，通常兩到三小時。海平面的公釐數會變，不要拿來對網頁上的 18.7 mm。當堂不要等它印完。</span><span class="en">For a smaller print set <code>WIDTH_MM = 80</code> and <code>RELIEF_MM = 13</code>. Exaggeration stays about 10× and the model is about 80 × 93 × 17 mm, usually two to three hours. The sea-level height in millimetres changes, so do not match it to the 18.7 mm on this page. Do not wait for the print during the period.</span></p>
+    </article>
+    <article class="card">
+      <h3 class="bi"><span class="zh">C. 電腦教室已裝好 conda</span><span class="en">C. Lab computers already have conda</span></h3>
+      <p class="bi"><span class="zh">只做步驟 3 和 4，解析度用 <code>05m</code>。步驟 1 在課前做完，第一次 <code>conda create</code> 常常要 20–40 分鐘。步驟 6 的 02 角分和巽他海峽留到課後。</span><span class="en">Do only steps 3 and 4, at <code>05m</code>. Finish step 1 before class; the first <code>conda create</code> often takes 20–40 minutes. Leave the 2-arc-minute grid and the Sunda Strait in step 6 for later.</span></p>
+      <p class="bi"><span class="zh">這門課的地圖實作用 Colab。Colab 沒有 GMT，也切不了片，不要叫學生在那裡做這份 STL。</span><span class="en">The map notebooks in this course run on Colab. Colab has no GMT and cannot slice, so do not ask students to build this STL there.</span></p>
+    </article>
+  </div>
+  <p class="bi hint"><span class="zh">投影步驟時，右上角切成「中」，每一句會短一倍。這個選擇和首頁共用。</span><span class="en">When you project the steps, switch the corner control to 中 so each sentence is shorter. The choice is shared with the home page.</span></p>
+</section>
+
 <section class="section" id="step1">
   <h2 class="sec-title"><span class="blob blob-ocean"></span><span class="bi"><span class="zh">照這個順序做</span><span class="en">Do it in this order</span></span></h2>
   <p class="teacher-line">“Finish the check before you start the next step.”<span class="zh">每一步看到檢查結果，再做下一步。</span></p>
@@ -73,7 +110,8 @@
 
   <ol class="steps">
     <li class="card" id="s1">
-      <h3><span class="step-no">1</span><span class="bi"><span class="zh">安裝</span><span class="en">Install</span></span></h3>
+      <h3><span class="step-no">1</span><span class="bi"><span class="zh">安裝（課前，不在這一節做）</span><span class="en">Install (before class, not during it)</span></span></h3>
+      <p class="bi"><span class="zh">走路線 A 的話跳過這一步。要自己跑程式，請在課前裝完：第一次常常要 20–40 分鐘，課堂上從這裡開始會做不完。</span><span class="en">Skip this step on path A. If students will run the scripts, install before class. The first install often takes 20–40 minutes, and starting here in the period means the period will not finish.</span></p>
       <p class="bi"><span class="zh">PyGMT 需要 GMT 本體。用 conda-forge 一次裝齊。<code>pip install pygmt</code> 不會裝 GMT。</span><span class="en">PyGMT needs the GMT library. conda-forge installs both. <code>pip install pygmt</code> does not.</span></p>
       <p class="bi"><span class="zh">還沒有 conda，先裝 <a href="https://github.com/conda-forge/miniforge" target="_blank" rel="noopener">Miniforge</a>。Windows 請開 Anaconda Prompt。</span><span class="en">No conda yet? Install <a href="https://github.com/conda-forge/miniforge" target="_blank" rel="noopener">Miniforge</a>. On Windows, use Anaconda Prompt.</span></p>
       <pre><code>conda create -n pygmt -c conda-forge python=3.12 pygmt netcdf4
@@ -131,7 +169,7 @@ python -c "import pygmt; print(pygmt.__version__)"</code></pre>
         <li class="bi"><span class="zh">不要只拉高模型。要改大小就三個方向一起縮，誇大倍數才不會被你再改掉。</span><span class="en">Do not stretch only the height. Scale all three axes together, or you change the exaggeration.</span></li>
         <li class="bi"><span class="zh">底座平貼平台。這是實心塊，斜坡通常不需要支撐。</span><span class="en">Seat the flat base on the bed. It is a solid block; the slopes usually need no support.</span></li>
         <li class="bi"><span class="zh">建議層高 0.2 mm、填充 10–15%、外壁 3 層，並加一圈 brim。</span><span class="en">Suggested: 0.2 mm layers, 10–15% infill, 3 walls, and a brim.</span></li>
-        <li class="bi"><span class="zh">第一層應該是一個完整的長方形。看座標軸確認哪一側是北，印完在北側標一個 N。</span><span class="en">The first layer should be one solid rectangle. Use the axis widget to find north, and mark N on that edge after printing.</span></li>
+        <li class="bi"><span class="zh">第一層應該是一個完整的長方形。臺灣範例南北 162.5 mm、東西 140 mm，較長的那一側是南北。讓模型平躺，不要轉成側立；印完在北側標一個 N。切片軟體畫面上的「上」不一定是北。</span><span class="en">The first layer should be one solid rectangle. On the Taiwan example, north–south is 162.5 mm and east–west is 140 mm, so the longer side is north–south. Lay the model flat and do not stand it on edge. Mark N on the north edge after printing. Screen-up in the slicer is not necessarily north.</span></li>
       </ol>
       <div class="check"><b>檢查 Check</b><p class="bi"><span class="zh">預覽裡海溝是凹的、島是凸的，海平面不是最底層。</span><span class="en">In the preview the trench is a valley, the island is a ridge, and sea level is not the bottom.</span></p></div>
       <div class="shot">
@@ -147,8 +185,8 @@ python -c "import pygmt; print(pygmt.__version__)"</code></pre>
     </li>
 
     <li class="card" id="s6">
-      <h3><span class="step-no">6</span><span class="bi"><span class="zh">換成正式解析度，或換範圍</span><span class="en">Use the finer grid, or another region</span></span></h3>
-      <p class="bi"><span class="zh">把 <code>RESOLUTION</code> 改回 <code>None</code>，再跑一次步驟 3 和 4。程式會改用 02 角分。接著把 <code>PRESET</code> 改成 <code>"sunda"</code>：</span><span class="en">Set <code>RESOLUTION</code> back to <code>None</code> and repeat steps 3 and 4. That uses 2 arc-minutes. Then set <code>PRESET</code> to <code>"sunda"</code>:</span></p>
+      <h3><span class="step-no">6</span><span class="bi"><span class="zh">進階：換成正式解析度，或換範圍（課後）</span><span class="en">Later: the finer grid, or another region</span></span></h3>
+      <p class="bi"><span class="zh">這一節不做。把 <code>RESOLUTION</code> 改回 <code>None</code>，再跑一次步驟 3 和 4。程式會改用 02 角分。接著把 <code>PRESET</code> 改成 <code>"sunda"</code>：</span><span class="en">Not in this period. Set <code>RESOLUTION</code> back to <code>None</code> and repeat steps 3 and 4. That uses 2 arc-minutes. Then set <code>PRESET</code> to <code>"sunda"</code>:</span></p>
       <pre><code>python 01_plot_topography.py --preset sunda
 python 02_relief_to_stl.py --preset sunda</code></pre>
       <div class="check"><b>檢查 Check</b><p class="bi"><span class="zh">在巽他海峽的圖和模型上指出三件事：西南側的海溝、蘇門答臘與爪哇、海峽的位置。要做自己的範圍，就在 <code>PRESETS</code> 加一筆，<code>region</code> 一樣寫 <code>[西, 東, 南, 北]</code>，再用 <code>--preset</code> 那個名字重跑。</span><span class="en">On the Sunda figure and model, point to the trench on the southwest side, to Sumatra and Java, and to the strait. For your own area, add an entry under <code>PRESETS</code> with <code>[west, east, south, north]</code> and rerun with that <code>--preset</code> name.</span></p></div>
@@ -160,10 +198,11 @@ python 02_relief_to_stl.py --preset sunda</code></pre>
 
     <li class="card" id="s7">
       <h3><span class="step-no">7</span><span class="bi"><span class="zh">回答這四題再交</span><span class="en">Answer these four before you hand it in</span></span></h3>
+      <p class="bi"><span class="zh">路線 A 直接用步驟 4 的表格作答，數字就是臺灣範例。自己跑過程式的人，改抄終端機「寫進學習單」那一塊；若改過寬度或高度，海平面的公釐數會和表格不同。</span><span class="en">On path A, answer from the step 4 table. Those numbers are the Taiwan example. If you ran the scripts, copy the terminal block instead. If you changed the width or the relief height, the sea-level millimetres will differ from the table.</span></p>
       <ol>
         <li class="bi"><span class="zh">若不誇大，高低差在模型上是幾公釐？為什麼還是要誇大？</span><span class="en">Without exaggeration, how many millimetres tall is the relief? Why exaggerate anyway?</span></li>
         <li class="bi"><span class="zh">能不能把模型上的坡度當成真實坡度？</span><span class="en">Can you treat a slope on the model as the real slope?</span></li>
-        <li class="bi"><span class="zh">解析度從 05m 改成 02m，三角形大約變多幾倍？噴嘴是 0.4 mm 時，是不是愈細愈值得印？</span><span class="en">From 05m to 02m, by about what factor does the triangle count grow? With a 0.4 mm nozzle, is finer always worth printing?</span></li>
+        <li class="bi"><span class="zh">表上的臺灣範例有 139728 個三角形（02 角分）。改成 05 角分時，三角形大約變成幾分之一？噴嘴是 0.4 mm 時，為什麼不值得再印更細的網格？</span><span class="en">The Taiwan example in the table has 139728 triangles (2 arc-minutes). At 5 arc-minutes, about what fraction of that remains? With a 0.4 mm nozzle, why is a still finer grid not worth printing?</span></li>
         <li class="bi"><span class="zh">這個模型上看得到 2026 年 9 月喀拉喀托之子新增的 32.8 公頃嗎？為什麼？</span><span class="en">Can you see the 32.8 hectares added at Anak Krakatau in September 2026? Why?</span></li>
       </ol>
       <details class="answer">
@@ -171,7 +210,7 @@ python 02_relief_to_stl.py --preset sunda</code></pre>
         <div class="cer-mini">
           <div><b>1</b><span class="bi"><span class="zh">臺灣範例是 2.22 mm。水平把 600 公里縮進 140 mm，同樣比例下約 10 公里的高低差比一層列印還薄。</span><span class="en">2.22 mm for the Taiwan example. 600 km becomes 140 mm, so about 10 km of relief is thinner than one printed layer.</span></span></div>
           <div><b>2</b><span class="bi"><span class="zh">不能。垂直被誇大了約 10 倍，坡度只存在於模型，不存在於野外。</span><span class="en">No. Height is exaggerated about ten times, so the slope belongs to the model, not to the field.</span></span></div>
-          <div><b>3</b><span class="bi"><span class="zh">線解析度提高 2.5 倍，三角形大約變成 6 倍。比噴嘴還密的細節印不出來，只會讓檔案變大、切片變慢。</span><span class="en">Linear resolution rises 2.5×, so the triangle count rises about 6×. Detail finer than the nozzle does not print; it only makes the file slower to slice.</span></span></div>
+          <div><b>3</b><span class="bi"><span class="zh">大約六分之一。線解析度從 02 角分改成 05 角分是變粗 2.5 倍，三角形大約變成 1/6。比 0.4 mm 噴嘴還密的細節印不出來，只會讓檔案變大、切片變慢。</span><span class="en">About one sixth. Going from 2 to 5 arc-minutes is 2.5× coarser, so the triangle count falls to about 1/6. Detail finer than a 0.4 mm nozzle does not print; it only makes the file slower to slice.</span></span></div>
           <div><b>4</b><span class="bi"><span class="zh">看不到。02 角分大約 3–4 公里一格，32.8 公頃不到 1 平方公里。這份網格是區域地形，不是那 25 小時堆出來的火山灰。海溝是百萬年尺度，新陸地是小時尺度。</span><span class="en">No. A 2-arc-minute cell is about 3–4 km across, and 32.8 hectares is under 1 km². The grid is regional relief, not the ash piled up in those 25 hours. The trench is a million-year feature; the new land is an hours-long one.</span></span></div>
         </div>
       </details>
@@ -191,6 +230,8 @@ python 02_relief_to_stl.py --preset sunda</code></pre>
           <tr><td class="bi"><span class="zh">模型幾乎是一塊平板</span><span class="en">The model is almost a flat slab</span></td><td class="bi"><span class="zh"><code>RELIEF_MM</code> 太小，或這個範圍沒有高低差。看終端機的垂直誇大。</span><span class="en"><code>RELIEF_MM</code> is tiny, or the region has no relief. Read the exaggeration in the terminal.</span></td></tr>
           <tr><td class="bi"><span class="zh">斜坡陡到需要很多支撐</span><span class="en">Slopes need a lot of support</span></td><td class="bi"><span class="zh">把 <code>RELIEF_MM</code> 從 22 改成 12，再跑步驟 4。</span><span class="en">Change <code>RELIEF_MM</code> from 22 to 12 and rerun step 4.</span></td></tr>
           <tr><td class="bi"><span class="zh">終端機寫「封閉：否」</span><span class="en">The terminal says the solid is not closed</span></td><td class="bi"><span class="zh">不要列印。把完整的終端機訊息留下來詢問。</span><span class="en">Do not print it. Keep the full terminal text and ask.</span></td></tr>
+          <tr><td class="bi"><span class="zh">模型放不進列印床，或預覽時間很長</span><span class="en">The model does not fit the bed, or the preview says it will take many hours</span></td><td class="bi"><span class="zh">用路線 B 的尺寸：<code>WIDTH_MM = 80</code>、<code>RELIEF_MM = 13</code>，再跑步驟 4。全班仍只印一個。</span><span class="en">Use the path B size: <code>WIDTH_MM = 80</code>, <code>RELIEF_MM = 13</code>, then rerun step 4. The class still prints one shared model.</span></td></tr>
+          <tr><td class="bi"><span class="zh">想在課堂上從步驟 1 開始裝</span><span class="en">You planned to start the period at step 1</span></td><td class="bi"><span class="zh">改走路線 A。安裝留到課前，這一節用範例圖和表格。</span><span class="en">Switch to path A. Leave the install for before class, and use the example figures and the table.</span></td></tr>
         </tbody>
       </table>
     </div>
@@ -201,5 +242,24 @@ python 02_relief_to_stl.py --preset sunda</code></pre>
 <footer class="footer">
   <p class="bi"><span class="zh">地形資料是 GMT 的 Earth relief（SRTM15+，Tozer et al. 2019），經 PyGMT 讀取。範例 STL 的單位是公釐，+X 朝東、+Y 朝北。程式與純文字步驟在 <a href="pygmt_3dprint/README.md"><code>pygmt_3dprint/</code></a>。</span><span class="en">Relief is GMT Earth relief (SRTM15+, Tozer et al. 2019), read through PyGMT. The example STL is in millimetres, +X east and +Y north. Scripts and the Markdown steps are in <a href="pygmt_3dprint/README.md"><code>pygmt_3dprint/</code></a>.</span></p>
 </footer>
+<script>
+(function () {
+  var buttons = document.querySelectorAll(".lang-toggle button");
+  function setMode(m) {
+    document.body.className = "mode-" + m;
+    document.documentElement.lang = m === "en" ? "en" : "zh-Hant";
+    buttons.forEach(function (b) { b.classList.toggle("active", b.dataset.mode === m); });
+    try { localStorage.setItem("rte:mode", JSON.stringify(m)); } catch (e) {}
+  }
+  var saved = "both";
+  try {
+    var raw = localStorage.getItem("rte:mode");
+    if (raw) saved = JSON.parse(raw);
+  } catch (e) {}
+  if (saved !== "zh" && saved !== "en" && saved !== "both") saved = "both";
+  buttons.forEach(function (b) { b.addEventListener("click", function () { setMode(b.dataset.mode); }); });
+  setMode(saved);
+})();
+</script>
 </body>
 </html>

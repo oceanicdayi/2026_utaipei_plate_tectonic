@@ -134,7 +134,7 @@
       <track kind="captions" srclang="zh-Hant" label="中文字幕" src="artifacts/22-notebook_github_tutorial.vtt">
     </video>
     <p class="bi hint"><span class="zh">內容：三站流程（GitHub → Colab → GitHub）→ 開啟 Notebook、登入並存副本 → 兩格「準備環境」分開執行 → Shift＋Enter 與逐步取消註解 → 看懂 NameError、從頭重跑 → 下載 USGS 地震並畫圖 → 建立 repository、上傳檔案、繳交前檢查。畫面為 GitHub、Colab 與 JupyterLab 的實際操作截圖；旁白為語音合成，畫面已內嵌字幕；<a href="artifacts/22-notebook_github_tutorial.vtt" download>下載字幕檔</a>。</span><span class="en">Covers: the three stops (GitHub → Colab → GitHub) → opening a notebook, signing in and saving a copy → running the two setup cells separately → Shift+Enter and uncommenting one step at a time → reading a NameError and rerunning from the top → fetching USGS quakes and plotting them → creating a repository, uploading files and checking the link before submitting. Screens are real GitHub, Colab and JupyterLab captures; synthesized narration with burned-in subtitles; <a href="artifacts/22-notebook_github_tutorial.vtt" download>download the subtitle file</a>.</span></p>
-    <p class="bi"><span class="zh">畫完地圖、要把地形印出來：<a href="pygmt-3dprint.html#video">地形圖怎麼變成 STL</a>（3 分鐘）。</span><span class="en">After the map, to print the relief: <a href="pygmt-3dprint.html#video">from the map to an STL</a> (3 min).</span></p>
+    <p class="bi"><span class="zh">想把地形印成模型，那是另外一節（約 25 分鐘，用現成範例，不當堂安裝）：<a href="pygmt-3dprint.html#class">這一節實際做什麼</a>。</span><span class="en">Printing the relief is a separate period (about 25 minutes, using the example file, with no install in class): <a href="pygmt-3dprint.html#class">what that period actually does</a>.</span></p>
   </div>
 </section>
 
@@ -498,7 +498,7 @@
       </div>
       <p class="frame">Taiwan is not simply ______; it includes ______, ______ and ______.</p>
       <button class="btn small stamp-btn" data-stamp="taiwan"><span class="bi"><span class="zh">蓋章：我能用多重證據描述臺灣</span><span class="en">Stamp: I can describe Taiwan with multiple lines of evidence</span></span></button>
-      <p class="bi"><span class="zh">下一步是把這張地形做成拿得起來的模型：用 PyGMT 畫海溝和山脈，再輸出 3D 列印用的 STL。</span><span class="en">Next, turn this relief into something you can hold: plot the trenches and the ranges with PyGMT, then export an STL for a 3D printer.</span></p>
+      <p class="bi"><span class="zh">延伸，另外一節，不排進這三節的 50 分鐘：同一張地形可以做成拿得起來的模型。課堂上用現成範例，不必當堂安裝 PyGMT。</span><span class="en">Extension for another period, outside these three 50-minute lessons: the same relief can become a model you hold. In class, use the example file. Do not install PyGMT in that period.</span></p>
       <a class="btn small" href="pygmt-3dprint.html"><span class="bi"><span class="zh">從地形圖到 3D 列印</span><span class="en">From the map to a 3D print</span></span></a>
       <p class="bi hint"><span class="zh">資料與程式碼：<a href="https://github.com/oceanicdayi/pygmt-map-lab/blob/main/case-studies/taiwan-back-to-taiwan/taiwan_map.py" target="_blank" rel="noopener">pygmt-map-lab 的案例：回到臺灣</a>。</span><span class="en">Data and code: <a href="https://github.com/oceanicdayi/pygmt-map-lab/blob/main/case-studies/taiwan-back-to-taiwan/taiwan_map.py" target="_blank" rel="noopener">pygmt-map-lab's Back to Taiwan case study</a>.</span></p>
     </div>
@@ -699,7 +699,7 @@
   </div>
 
   <!-- D. time-scale lab -->
-  <div class="card wide">
+  <div class="card wide" id="krak-scale">
     <h3 class="bi"><span class="zh">D. 時間尺度實驗：是板塊「推」出來的嗎？</span><span class="en">D. Time-scale lab: did plate motion push this land up?</span></h3>
     <p class="bi"><span class="zh">拉動滑桿，比較同一段距離：板塊要走多久？這次噴發只用了 25 小時。</span><span class="en">Drag the slider and compare the same distance: how long does the plate need? The eruption took 25 hours.</span></p>
     <div class="lab">
@@ -714,6 +714,15 @@
 
   <!-- E. classroom use -->
   <h3 class="sub-head bi"><span class="zh">E. 課堂怎麼用</span><span class="en">E. How to use it in class</span></h3>
+  <div class="card wide" id="krak-20min">
+    <h3 class="bi"><span class="zh">只剩 20 分鐘時，做這三件事</span><span class="en">With 20 minutes left, do these three things</span></h3>
+    <ol>
+      <li class="bi"><span class="zh"><a href="#claim-list">查證題（A）</a>：把標題和測量分開。約 8 分鐘。</span><span class="en"><a href="#claim-list">The claim sort (A)</a>: separate the headline from the measurements. About 8 minutes.</span></li>
+      <li class="bi"><span class="zh"><a href="#krak-scale">時間尺度滑桿（D）</a>：自己算出 760 公尺要幾萬年。約 5 分鐘。</span><span class="en"><a href="#krak-scale">The time-scale slider (D)</a>: compute how many tens of thousands of years 760 metres would take. About 5 minutes.</span></li>
+      <li class="bi"><span class="zh"><a href="#krak-cer">CER（F）</a>：新陸地是火山堆積，不是板塊推出來的。約 7 分鐘。</span><span class="en"><a href="#krak-cer">The CER (F)</a>: the new land is a volcanic deposit, not something the plates pushed up. About 7 minutes.</span></li>
+    </ol>
+    <p class="bi hint"><span class="zh">5 分鐘的影片請課前看。剖面、岩漿管道、Sentinel-2、單力模型和防災網是另一節的材料，不要和上面三件事擠在同一節。下面的卡片是選單，另一節再抽一張。</span><span class="en">Watch the 5-minute video before class. The section, the magma plumbing, Sentinel-2, the single-force model and the warning-network design belong in another period. The cards below are a menu: pick one card next time.</span></p>
+  </div>
   <div class="lesson-grid">
     <article class="card">
       <h4 class="bi"><span class="zh">釐清迷思</span><span class="en">Break the misconception</span></h4>
@@ -769,7 +778,7 @@
   </div>
 
   <!-- F. CER -->
-  <div class="two-col krakatau-cer">
+  <div class="two-col krakatau-cer" id="krak-cer">
     <div class="card">
       <h3 class="bi"><span class="zh">F. 寫下你的 CER：這兩塊新陸地是怎麼來的？</span><span class="en">F. Write your CER: where did this new land come from?</span></h3>
       <form class="cer-form">

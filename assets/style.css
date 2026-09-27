@@ -18,7 +18,7 @@
   --font-zh-title:"Noto Serif TC","Songti TC","PMingLiU",serif;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;scroll-padding-top:4.5rem}
 body{
   margin:0;color:var(--ink);background:var(--paper);
   font-family:var(--font-zh),var(--font-en);
