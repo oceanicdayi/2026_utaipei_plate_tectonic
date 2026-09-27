@@ -119,7 +119,7 @@ Observation → Pattern → Model → Explanation → Prediction → Test → Re
 4. 第三節分組進行 Mystery Region，完成預測後才使用 AI。
 5. 結尾回到臺灣（中央山脈、西部麓山帶、縱谷、馬尼拉海溝、琉球海溝），讓學生看到真實板塊環境比單一圖示更複雜。
 6. 延伸（選用）：以 2026 年 9 月喀拉喀托之子噴發新聞為時事案例，若想加入媒體識讀，可先做網頁中的新聞查證分類，再用時間尺度計算器打掉「新島是板塊推出來的」迷思，最後對照沖繩海槽／龜山島與呂宋島弧；投影片見 [`artifacts/喀拉喀托之子與板塊構造.pdf`](artifacts/喀拉喀托之子與板塊構造.pdf)；資料驅動的地圖與地震剖面版本見 [pygmt-map-lab 的案例：巽他海峽／喀拉喀托之子（2026）](https://github.com/oceanicdayi/pygmt-map-lab/tree/main/case-studies/2026-sunda-strait-krakatau)，該案例的地圖與剖面圖也收在 [`artifacts/16-sunda_strait_map.png`](artifacts/16-sunda_strait_map.png)、[`artifacts/17-sunda_strait_section.png`](artifacts/17-sunda_strait_section.png)。
-7. 想把地形做成實體模型時，用 [`pygmt-3dprint.html`](pygmt-3dprint.html) 的七個步驟：PyGMT 畫地形圖，再把同一份網格輸出成 3D 列印用的 STL。學生只改 `pygmt_3dprint/settings.py`。
+7. 想把地形做成實體模型時，用 [`pygmt-3dprint.html`](pygmt-3dprint.html) 的七個步驟：PyGMT 畫地形圖，再把同一份網格輸出成 3D 列印用的 STL。學生只改 `pygmt_3dprint/settings.py`。這是三節課之外的另一節。沒有印表機時約 25 分鐘：看影片、看範例圖、用頁面上的數字回答四題，不當堂安裝。有印表機時全班共用一個模型，140 mm 寬的範例大約要印一整晚；較小的尺寸寫在該頁「這一節實際做什麼」。
 
 課程收束的一句話：
 

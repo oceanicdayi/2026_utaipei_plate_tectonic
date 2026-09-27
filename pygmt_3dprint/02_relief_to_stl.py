@@ -174,7 +174,8 @@ def print_report(report, closed, stl_path):
     print(f"網格        {report['points'][0]} × {report['points'][1]} 點，{report['triangles']} 個三角形")
     print(f"封閉        {ok}")
     print(f"檔案        {stl_path}")
-    print("方向        +X 東、+Y 北。切片軟體裡請看座標軸，不要假設螢幕上方是北。")
+    print("方向        +X 東、+Y 北。臺灣這個範圍南北比東西長，較長的那一側是南北。")
+    print("            讓模型平躺，不要轉成側立。不要假設切片軟體螢幕上方是北。")
     print("================================")
 
 
